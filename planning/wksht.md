@@ -5,5 +5,7 @@ App that helps users find/eat local produce. Simple to use, no overload of infor
 Map with farm locations/times
 Opt in alerts about farmers markets
 Recipe ingredient scanner for local produce
+Enter zipcode upon entry, gives next/closest farmers market
+Input produce that you bought/plan to buy, outputs possible recipes
 
 ## Models
