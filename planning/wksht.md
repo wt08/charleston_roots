@@ -76,20 +76,24 @@ DESKTOP/TABLET:
 COMPONENTS:  
 Layout  
 Nav  
+Footer  
 HomePage  
 Login  
 Recipe_gen  
 Recipe_gen_results  
 Indiv_recipe  
 Faves  
+Account_settings
 
 
 ## MVP/Post MVP
 
 MVP:  
 
-HOMEPAGE  
-add NAV  
+HOMEPAGE 
+add Layout component 
+add Nav component
+add Footer comp
 add login button  
 generate map  
 create markets/times/address model with seeded data  
@@ -108,7 +112,8 @@ create user model
 create get, post, and delete routes  
 create Login page w/ API call  
 link Login page to homepage  
-style
+create account_settings page that displays username, email, and ability to delete
+style  
 
 RECIPE GENERATOR  
 Create produce model and seed data  
@@ -150,11 +155,11 @@ Extra styling/effects
 ## Schedule
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1 (Tues)| Finish planning & Homepage upto/including generate map | Inomplete
-|Day 2 (Wed)| Rest of homepage | Inomplete
-|Day 3 (Thurs)| Nav & User Account | Inomplete
-|Day 4 (Fri) | Recipe Generator | Inomplete
-|Day 5 (Sat) |  TBD | Inomplete
+|Day 1 (Tues)| Finish planning & Homepage upto/including generate map | Incomplete
+|Day 2 (Wed)| Rest of homepage | Incomplete
+|Day 3 (Thurs)| Nav & User Account | Incomplete
+|Day 4 (Fri) | Recipe Generator | Incomplete
+|Day 5 (Sat) |  TBD | Incomplete
 |Day 5 (Sun) | Recipe Generator Results | Incomplete
 |Day 5 (Mon) | Individual/Fave Recipe & Linking/Routing | Incomplete
 |Day 5 (Tues) | Final Touches | Incomplete
@@ -164,9 +169,11 @@ Extra styling/effects
 MVP:  
 | Component        | Priority | Estimated Time | Time Invetsted | Actual Time |
 | -------------    | :------: | :------------: | :------------: | :---------: |
-| add Nav          |    H     |       8hrs     |      -hrs      |    hrs      |
-| add login button |    H     |      16hrs     |      -hrs      |    hrs      |
-| generate map     |    H     |      24hrs     |      -hrs      |    hrs      |
+| add Layout          |    H     |       .5hrs     |      .5hrs      |    hrs      |
+| add Nav          |    H     |       .5hrs     |       .5hrs      |    hrs      |
+| add Footer          |    H     |       .5hrs     |       .5hrs      |    hrs      |
+| add login button |    H     |      .5rs     |      -hrs      |    hrs      |
+| generate map     |    H     |      4rs     |      -hrs      |    hrs      |
 | Total            |    H     |      hrs       |      -hrs      |    hrs      |
 
 POSTMVP:  
@@ -175,3 +182,7 @@ POSTMVP:
 | Calendar      |    L     |      8hrs      |      -hrs      |    -hrs     |
 | Styling/effcts|    L     |     10hrs      |      -hrs      |    hrs      |
 | Total         |    L     |     18hrs      |      -hrs      |    hrs      |
+
+## Additional Libraries
+
+## Hurdles
