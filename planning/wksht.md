@@ -40,8 +40,12 @@ Hours: string
 markets_id
 
 Faves (one to many relationship with user)    
-Label: string
+edamam_uri: string
 user_id: string
+
+Produce
+Name: string  
+img: string
 
 
 ## Project Links
@@ -85,26 +89,53 @@ Faves
 MVP:  
 
 HOMEPAGE  
-add NAV
-add login button
-generate map
-create markets/times/address model with seeded data
-create GET routes
-have markets locations display on map thru API call
-allow user to find closest by entering zipcode
-when market location on map clicked, display info from market/time/address models
-
+add NAV  
+add login button  
+generate map  
+create markets/times/address model with seeded data  
+create GET routes  
+have markets locations display on map thru API call  
+allow user to find closest by entering zipcode  
+when market location on map clicked, display info from market/time/address models  
+style  
 
 NAV  
-create hamburger menu
+create hamburger menu  
 style
 
 USER ACCOUNT  
 create user model  
 create get, post, and delete routes  
-create Login page w/ API call
-link Login page to homepage
+create Login page w/ API call  
+link Login page to homepage  
 style
+
+RECIPE GENERATOR  
+Create produce model and seed data  
+Create get route  
+display all produce on page  
+add filters and serch by name  
+add handleonclick to produce div that stores name in useState
+add get recipe button that links to results page  
+style  
+
+RECIPE GENERATOR RESULTS
+use produce stored in usestate to call Edamam recipe API using produce as queries  
+display recipe API results on page  
+create favorite model  
+add favorite star to recipe div  
+add handeonlclick to star so that recipe is added to faves model  
+add back button that takes you back to recipe generator w/ previously selected items  
+style  
+
+INDIVIDUAL RECIPE  
+display recipe name, image, ingredients, and linke to recipe based on variable passed to it  
+style  
+
+FAVE RECIPES  
+display all recipes based on user who is logged in
+use edamam_uri in fav model top make edama API to get recipe data  
+style  
 
 LINKING/ROUTING  
 create routes in App.js  
@@ -112,17 +143,31 @@ link nav elements to components
 
 
 
+POST MVP:
+Calendar  
+Extra styling/effects
+
+## Schedule
+|  Day | Deliverable | Status
+|---|---| ---|
+|Day 1 (Tues)| Finish planning & Homepage upto/including generate map | Inomplete
+|Day 2 (Wed)| Rest of homepage | Inomplete
+|Day 3 (Thurs)| Nav & User Account | Inomplete
+|Day 4 (Fri) | Recipe Generator | Inomplete
+|Day 5 (Sat) |  TBD | Inomplete
+|Day 5 (Sun) | Recipe Generator Results | Incomplete
+|Day 5 (Mon) | Individual/Fave Recipe & Linking/Routing | Incomplete
+|Day 5 (Tues) | Final Touches | Incomplete
 
 ## Time Frames
 
 MVP:  
 | Component        | Priority | Estimated Time | Time Invetsted | Actual Time |
 | -------------    | :------: | :------------: | :------------: | :---------: |
-| User Account     |    H     |       8hrs     |      -hrs      |    hrs      |
-| Interactive Map  |    H     |      16hrs     |      -hrs      |    hrs      |
-| Recipe Generator |    H     |      24hrs     |      -hrs      |    hrs      |
-| Fave Recipes     |    H     |       8hrs     |      -hrs      |    hrs      | 
-| Total            |    H     |      56hrs     |      -hrs      |    hrs      |
+| add Nav          |    H     |       8hrs     |      -hrs      |    hrs      |
+| add login button |    H     |      16hrs     |      -hrs      |    hrs      |
+| generate map     |    H     |      24hrs     |      -hrs      |    hrs      |
+| Total            |    H     |      hrs       |      -hrs      |    hrs      |
 
 POSTMVP:  
 | Component     | Priority | Estimated Time | Time Invetsted | Actual Time |
