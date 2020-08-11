@@ -3,7 +3,10 @@ App that helps users find/eat local produce. Simple to use, no overload of infor
 
 ## User Stories
 As a user, I should be able to locate farmer's markets near me.  
-As a user, I should be able to find recipes for the produce I bought/plan to buy
+As a user, I should be able to find recipes for the produce I bought/plan to buy.
+As a user, I should be able to create an account.
+As a user, I should be able to delete an account.
+As a user, I should be able to save my favorite recipes.
 
 ## Ideas
 Map with farm locations/times.  
@@ -18,6 +21,28 @@ Sign in to save your fav recipes
 User   
 Email: string  
 Username: string  
+
+Markets  
+Name: string  
+Address: address model
+HoursOfOperation: times model
+
+Address  
+Number: integer
+Street: string  
+City: string
+State: string
+Zipcode: string
+
+Times (one to many relationship with markets)
+Day: string
+Hours: string
+markets_id
+
+Faves (one to many relationship with user)    
+Label: string
+user_id: string
+
 
 ## Project Links
 
@@ -44,18 +69,49 @@ DESKTOP/TABLET:
 
 ## React Architecture
 - [Architecture](https://res.cloudinary.com/dgbf3yxnd/image/upload/v1597158719/capstone/IMG_0420_qte7ug.jpg)
+COMPONENTS:  
+Layout  
+Nav  
+HomePage  
+Login  
+Recipe_gen  
+Recipe_gen_results  
+Indiv_recipe  
+Faves  
+
 
 ## MVP/Post MVP
 
 MVP:  
-User account  
-Interactive map  
-Recipe Generator
-Fave Recipes
 
-POSTMVP:  
-Calendar  
-Styling/effects
+HOMEPAGE  
+add NAV
+add login button
+generate map
+create markets/times/address model with seeded data
+create GET routes
+have markets locations display on map thru API call
+allow user to find closest by entering zipcode
+when market location on map clicked, display info from market/time/address models
+
+
+NAV  
+create hamburger menu
+style
+
+USER ACCOUNT  
+create user model  
+create get, post, and delete routes  
+create Login page w/ API call
+link Login page to homepage
+style
+
+LINKING/ROUTING  
+create routes in App.js  
+link nav elements to components
+
+
+
 
 ## Time Frames
 
