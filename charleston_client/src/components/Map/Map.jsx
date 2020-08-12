@@ -8,8 +8,8 @@ const Map = () => {
     padding: "10px",
   };
 
-  const TOKEN =
-    "pk.eyJ1Ijoid3QwOCIsImEiOiJja2Rya245YncwY3A1MzNudTBoMmViNGN5In0.A6tKzG9bu81bRgCrQ63HaA";
+  const TOKEN = process.env.REACT_APP_mapbox_api
+  console.log(TOKEN)
 
   const [viewport, setViewPort] = useState({
     width: "80%",

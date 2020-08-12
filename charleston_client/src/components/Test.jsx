@@ -5,9 +5,10 @@ import MapGL from "react-map-gl";
 import DeckGL, { GeoJsonLayer } from "deck.gl";
 import Geocoder from "react-map-gl-geocoder";
 
-const token = "pk.eyJ1Ijoid3QwOCIsImEiOiJja2Rya245YncwY3A1MzNudTBoMmViNGN5In0.A6tKzG9bu81bRgCrQ63HaA" 
+const token = process.env.REACT_APP_mapbox_api
 
 class SearchableMap extends Component {
+
   state = { 
     viewport :{
       latitude: 0,
