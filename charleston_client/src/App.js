@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import Layout from "./components/Layout";
-import Map from './components/Map'
+import Layout from "./components/Layout/Layout";
+import Homepage from './components/Homepage/Homepage'
 
 
 function App() {
@@ -29,8 +29,7 @@ function App() {
   return (
     <div className="App">
       <Layout>
-        <h1>Hello</h1>
-        <Map />
+        <Homepage />
       </Layout>
     </div>
   );
