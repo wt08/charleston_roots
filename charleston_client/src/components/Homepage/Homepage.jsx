@@ -1,11 +1,11 @@
 import React from 'react'
-import Map from '../Map/Map'
+import Test from '../Test'
 
 const Homepage = () => {
     return (
         <div>
             <h1>Sourced: Charleston</h1>
-         <Map />   
+         <Test />   
         </div>
     )
 }
