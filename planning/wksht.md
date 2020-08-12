@@ -175,7 +175,7 @@ MVP:
 | add Nav          |    H     |       .5hrs     |       .5hrs      |    hrs      |
 | add Footer          |    H     |       .5hrs     |       .5hrs      |    hrs      |
 | add login button |    H     |      .5rs     |      -hrs      |    hrs      |
-| generate map     |    H     |      4rs     |      -hrs      |    hrs      |
+| generate map     |    H     |      4rs     |      10.30 - hrs      |    hrs      |
 | Total            |    H     |      hrs       |      -hrs      |    hrs      |
 
 POSTMVP:  
