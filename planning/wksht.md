@@ -76,6 +76,8 @@ DESKTOP/TABLET:
 COMPONENTS:  
 Layout  
 Nav  
+Burger  
+Menu  
 Footer  
 HomePage  
 Login  
@@ -155,7 +157,7 @@ Extra styling/effects
 ## Schedule
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1 (Tues)| Finish planning & Homepage upto/including generate map | Incomplete
+|Day 1 (Tues)| Finish planning & Layout, Nav, Footer from Homepage section | Complete
 |Day 2 (Wed)| Rest of homepage | Incomplete
 |Day 3 (Thurs)| Nav & User Account | Incomplete
 |Day 4 (Fri) | Recipe Generator | Incomplete
