@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import Layout from "./components/Layout";
+import Map from './components/Map'
+
 
 function App() {
   const app_id = process.env.REACT_APP_app_id;
@@ -20,10 +22,15 @@ function App() {
   //   makeAPICall();
   // }, []);
 
+
+
+ 
+
   return (
     <div className="App">
       <Layout>
         <h1>Hello</h1>
+        <Map />
       </Layout>
     </div>
   );
