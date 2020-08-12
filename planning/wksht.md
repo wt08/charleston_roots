@@ -79,7 +79,8 @@ Nav
 Burger  
 Menu  
 Footer  
-HomePage  
+HomePage 
+Map   
 Login  
 Recipe_gen  
 Recipe_gen_results  
@@ -97,7 +98,7 @@ add Layout component
 add Nav component
 add Footer comp
 add login button  
-generate map  
+generate Map    
 create markets/times/address model with seeded data  
 create GET routes  
 have markets locations display on map thru API call  
@@ -175,7 +176,7 @@ MVP:
 | add Nav          |    H     |       .5hrs     |       .5hrs      |    hrs      |
 | add Footer          |    H     |       .5hrs     |       .5hrs      |    hrs      |
 | add login button |    H     |      .5rs     |      -hrs      |    hrs      |
-| generate map     |    H     |      4rs     |      10.30 - hrs      |    hrs      |
+| generate map     |    H     |      4rs     |      3hrs  3-    |    hrs      |
 | Total            |    H     |      hrs       |      -hrs      |    hrs      |
 
 POSTMVP:  
@@ -186,5 +187,7 @@ POSTMVP:
 | Total         |    L     |     18hrs      |      -hrs      |    hrs      |
 
 ## Additional Libraries
+React-Map-GL
+Mapbox GL JS
 
 ## Hurdles

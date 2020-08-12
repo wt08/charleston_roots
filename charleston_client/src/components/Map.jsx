@@ -1,37 +1,44 @@
-import React, {useState} from 'react'
-import MapGL, {GeolocateControl } from 'react-map-gl'
-
+import React, { useState } from "react";
+import MapGL, { GeolocateControl } from "react-map-gl";
 
 const Map = () => {
+  const geolocateStyle = {
+    float: "left",
+    margin: "50px",
+    padding: "10px",
+  };
 
-    const TOKEN='pk.eyJ1Ijoid3QwOCIsImEiOiJja2Rya245YncwY3A1MzNudTBoMmViNGN5In0.A6tKzG9bu81bRgCrQ63HaA'
+  const TOKEN =
+    "pk.eyJ1Ijoid3QwOCIsImEiOiJja2Rya245YncwY3A1MzNudTBoMmViNGN5In0.A6tKzG9bu81bRgCrQ63HaA";
 
-    const [viewport, setViewPort ] = useState({
-        width: "100%",
-        height: 900,
-        latitude: 0,
-        longitude: 0,
-        zoom: 2
-      })
+  const [viewport, setViewPort] = useState({
+    width: "100%",
+    height: 900,
+    latitude: 0,
+    longitude: 0,
+    zoom: 2,
+  });
 
-      const _onViewportChange = viewport => setViewPort({...viewport, transitionDuration: 3000 })
+//   when viewport changes, update viewport variable
+  const _onViewportChange = (viewport) =>
+    setViewPort({ ...viewport, transitionDuration: 3000 });
 
-    return (
-        <div>
-            <MapGL
+  return (
+    <div>
+      <MapGL
         {...viewport}
         mapboxApiAccessToken={TOKEN}
         mapStyle="mapbox://styles/mapbox/dark-v8"
         onViewportChange={_onViewportChange}
       >
         <GeolocateControl
-          positionOptions={{enableHighAccuracy: true}}
+          style={geolocateStyle}
+          positionOptions={{ enableHighAccuracy: true }}
           trackUserLocation={true}
         />
       </MapGL>
-        </div>
-    )
-}
+    </div>
+  );
+};
 
-
-export default Map
+export default Map;
