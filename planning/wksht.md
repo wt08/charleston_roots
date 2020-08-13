@@ -24,26 +24,26 @@ Username: string
 
 Markets  
 Name: string  
-Address: address model
+Address: address model  
 HoursOfOperation: times model
 
 Address  
-Number: integer
+Number: integer  
 Street: string  
-City: string
-State: string
-Zipcode: string
+City: string  
+State: string  
+Zipcode: string  
 
-Times (one to many relationship with markets)
-Day: string
-Hours: string
+Times (one to many relationship with markets)  
+Day: string  
+Hours: string  
 markets_id
 
 Faves (one to many relationship with user)    
-edamam_uri: string
-user_id: string
+edamam_uri: string  
+user_id: string  
 
-Produce
+Produce  
 Name: string  
 img: string
 
@@ -94,9 +94,9 @@ Account_settings
 MVP:  
 
 HOMEPAGE 
-add Layout component 
-add Nav component
-add Footer comp
+add Layout component x  
+add Nav component  x    
+add Footer comp x  
 add login button  
 generate Map    
 create markets/times/address model with seeded data  
@@ -159,8 +159,8 @@ Extra styling/effects
 |  Day | Deliverable | Status
 |---|---| ---|
 |Day 1 (Tues)| Finish planning & Layout, Nav, Footer from Homepage section | Complete
-|Day 2 (Wed)| Rest of homepage | Incomplete
-|Day 3 (Thurs)| Nav & User Account | Incomplete
+|Day 2 (Wed)| Homepage partial | Complete
+|Day 3 (Thurs)| Rest of homepage, User Account | Incomplete
 |Day 4 (Fri) | Recipe Generator | Incomplete
 |Day 5 (Sat) |  TBD | Incomplete
 |Day 5 (Sun) | Recipe Generator Results | Incomplete
@@ -176,7 +176,13 @@ MVP:
 | add Nav          |    H     |       .5hrs     |       .5hrs      |    hrs      |
 | add Footer          |    H     |       .5hrs     |       .5hrs      |    hrs      |
 | add login button |    H     |      .5rs     |      -hrs      |    hrs      |
-| generate map     |    H     |      4rs     |      3hrs  3-    |    hrs      |
+| generate map     |    H     |      4rs     |      4hrs    |    hrs      |
+| create markets/times/address model with seeded data     |    H     |      .5rs     |      8:30 - hrs    |    hrs      |
+| create GET routes     |    H     |      .5rs     |      hrs    |    hrs      |
+| have markets locations display on map thru API call     |    H     |      .5rs     |      hrs    |    hrs      |
+| allow user to find closest by entering zipcode     |    H     |      3rs     |      3hrs    |    hrs      |
+| when market location on map clicked, display info from market/time/address models     |    H     |      3rs     |      hrs    |    hrs      |
+| style homepage         |    H     |       2hrs     |       hrs      |    hrs      |
 | Total            |    H     |      hrs       |      -hrs      |    hrs      |
 
 POSTMVP:  
