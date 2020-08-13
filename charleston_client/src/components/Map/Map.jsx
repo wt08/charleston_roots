@@ -6,16 +6,14 @@ import DeckGL, { GeoJsonLayer } from "deck.gl";
 import Geocoder from "react-map-gl-geocoder";
 import { IconLayer } from "@deck.gl/layers";
 
-
 const token = process.env.REACT_APP_mapbox_api;
 
 class Map extends Component {
-
   state = {
     viewport: {
-      latitude: 32.792111,
+      latitude: 33,
       longitude: -79.925856,
-      zoom: 9,
+      zoom: 8,
     },
     searchResultLayer: null,
   };
@@ -49,10 +47,10 @@ class Map extends Component {
     // a little confused how this is working
     const { viewport, searchResultLayer } = this.state;
 
-      // sets style of icon
-  const iconMapping = {
-    marker: { x: 0, y: 0, width: 128, height: 128, mask: true },
-  };
+    // sets style of icon
+    const iconMapping = {
+      marker: { x: 0, y: 0, width: 128, height: 128, mask: true },
+    };
 
     const layer = new IconLayer({
       id: "icon-layer",
@@ -64,7 +62,7 @@ class Map extends Component {
         "https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/icon-atlas.png",
       iconMapping: iconMapping,
       getIcon: (d) => "marker",
-  
+
       sizeScale: 15,
       getPosition: (d) => d.coordinates,
       getSize: (d) => 3,
@@ -95,7 +93,13 @@ class Map extends Component {
           />
         </MapGL>
         {/* creates red dot on location searched for */}
-        <DeckGL viewState={viewport} layers={[layer]} />
+        <DeckGL
+          viewState={viewport}
+          layers={[layer]}
+          getTooltip={({ object }) =>
+            object && `${object.name}\n${object.address}`
+          }
+        />
       </div>
     );
   }
