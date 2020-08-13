@@ -28,15 +28,9 @@ Username: string
 
 Markets  
 Name: string  
-Address: address model  
-HoursOfOperation: times model
-
-Address  
-Number: integer  
-Street: string  
-City: string  
-State: string  
-Zipcode: string
+Address: string  
+Exits: integer
+Coordinates: decimals (array)
 
 Times (one to many relationship with markets)  
 Day: string  
@@ -112,6 +106,10 @@ allow user to find closest by entering zipcode
 when market location on map clicked, display info from market/time/address models  
 style
 
+DEPLOY  
+backend  
+frontend
+
 NAV  
 create hamburger menu  
 style
@@ -165,8 +163,8 @@ Extra styling/effects
 | ------------- | ----------------------------------------------------------- | ---------- |
 | Day 1 (Tues)  | Finish planning & Layout, Nav, Footer from Homepage section | Complete   |
 | Day 2 (Wed)   | Homepage partial                                            | Complete   |
-| Day 3 (Thurs) | Rest of homepage, User Account                              | Incomplete |
-| Day 4 (Fri)   | Recipe Generator                                            | Incomplete |
+| Day 3 (Thurs) | Rest of homepage, Deploy backend                            | Incomplete |
+| Day 4 (Fri)   | User Account, Recipe Generator                              | Incomplete |
 | Day 5 (Sat)   | TBD                                                         | Incomplete |
 | Day 5 (Sun)   | Recipe Generator Results                                    | Incomplete |
 | Day 5 (Mon)   | Individual/Fave Recipe & Linking/Routing                    | Incomplete |
@@ -182,7 +180,7 @@ MVP:
 | add Footer | H | .5hrs | .5hrs | hrs |
 | add login button | H | .5rs | -hrs | hrs |
 | generate map | H | 4rs | 4hrs | hrs |
-| create markets/times/address model with seeded data | H | .5rs | 8:30 - hrs | hrs |
+| create markets/times/address model with seeded data | H | .5rs | 1hrs 10:00 - | hrs |
 | create GET routes | H | .5rs | hrs | hrs |
 | have markets locations display on map thru API call | H | .5rs | hrs | hrs |
 | allow user to find closest by entering zipcode | H | 3rs | 3hrs | hrs |

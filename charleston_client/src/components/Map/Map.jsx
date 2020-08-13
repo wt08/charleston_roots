@@ -6,6 +6,7 @@ import DeckGL, { GeoJsonLayer } from "deck.gl";
 import Geocoder from "react-map-gl-geocoder";
 import { IconLayer } from "@deck.gl/layers";
 
+
 const token = process.env.REACT_APP_mapbox_api;
 
 class Map extends Component {
@@ -17,20 +18,7 @@ class Map extends Component {
 
   layer = new IconLayer({
     id: "icon-layer",
-    data: [
-      {
-        name: "West Ashley Farmers Market",
-        address: "55 Sycamore Ave, Charleston, SC 29407",
-        exits: 4214,
-        coordinates: [-79.987733, 32.790253],
-      },
-      {
-        name: "West Ashley Farmers Market",
-        address: "Sea Island Farmers Market, Johns Island, SC 29455",
-        exits: 4214,
-        coordinates: [-80.050307, 32.715936],
-      }
-    ],
+    data: this.props.marketData,
     pickable: true,
     // iconAtlas and iconMapping are required
     // getIcon: return a string
@@ -82,6 +70,8 @@ class Map extends Component {
   render() {
     // a little confused how this is working
     const { viewport, searchResultLayer } = this.state;
+
+    console.log(this.props.marketData)
 
     return (
       <div style={{ height: "100vh" }}>
