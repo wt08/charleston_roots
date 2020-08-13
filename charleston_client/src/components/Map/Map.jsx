@@ -11,28 +11,6 @@ const token = process.env.REACT_APP_mapbox_api;
 
 class Map extends Component {
 
-  // sets style of icon
-  ICON_MAPPING = {
-    marker: { x: 0, y: 0, width: 128, height: 128, mask: true },
-  };
-
-  layer = new IconLayer({
-    id: "icon-layer",
-    data: this.props.marketData,
-    pickable: true,
-    // iconAtlas and iconMapping are required
-    // getIcon: return a string
-    iconAtlas:
-      "https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/icon-atlas.png",
-    iconMapping: this.ICON_MAPPING,
-    getIcon: (d) => "marker",
-
-    sizeScale: 15,
-    getPosition: (d) => d.coordinates,
-    getSize: (d) => 3,
-    getColor: (d) => [Math.sqrt(d.exits), 140, 0],
-  });
-
   state = {
     viewport: {
       latitude: 32.792111,
@@ -71,7 +49,27 @@ class Map extends Component {
     // a little confused how this is working
     const { viewport, searchResultLayer } = this.state;
 
-    console.log(this.props.marketData)
+      // sets style of icon
+  const iconMapping = {
+    marker: { x: 0, y: 0, width: 128, height: 128, mask: true },
+  };
+
+    const layer = new IconLayer({
+      id: "icon-layer",
+      data: this.props.marketData,
+      pickable: true,
+      // iconAtlas and iconMapping are required
+      // getIcon: return a string
+      iconAtlas:
+        "https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/icon-atlas.png",
+      iconMapping: iconMapping,
+      getIcon: (d) => "marker",
+  
+      sizeScale: 15,
+      getPosition: (d) => d.coordinates,
+      getSize: (d) => 3,
+      getColor: (d) => [Math.sqrt(d.exits), 140, 0],
+    });
 
     return (
       <div style={{ height: "100vh" }}>
@@ -97,7 +95,7 @@ class Map extends Component {
           />
         </MapGL>
         {/* creates red dot on location searched for */}
-        <DeckGL viewState={viewport} layers={[this.layer]} />
+        <DeckGL viewState={viewport} layers={[layer]} />
       </div>
     );
   }
