@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Map from "../Map/Map";
 import axios from "axios";
+import './Homepage.css'
 
 const Homepage = () => {
   const [markets, setMarkets] = useState(null);
@@ -38,6 +39,7 @@ const Homepage = () => {
   return (
     <div>
       <h1>Sourced: Charleston</h1>
+      
       {/* if markets variable has content, map over each element and create new object. Pass down this object */}
       <Map marketData={markets ? markets.map(market => {
           return (
@@ -49,7 +51,8 @@ const Homepage = () => {
         }
           )
   }) : null}/>
-    </div>
+  </div>
+    
   );
 };
 

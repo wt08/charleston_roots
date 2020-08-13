@@ -5,6 +5,7 @@ import MapGL from "react-map-gl";
 import DeckGL, { GeoJsonLayer } from "deck.gl";
 import Geocoder from "react-map-gl-geocoder";
 import { IconLayer } from "@deck.gl/layers";
+import "./Map.css";
 
 const token = process.env.REACT_APP_mapbox_api;
 
@@ -91,15 +92,15 @@ class Map extends Component {
             mapboxApiAccessToken={token}
             position="top-left"
           />
+
+          <DeckGL
+            viewState={viewport}
+            layers={[layer]}
+            getTooltip={({ object }) =>
+              object && `${object.name}\n${object.address}`
+            }
+          />
         </MapGL>
-        {/* creates red dot on location searched for */}
-        <DeckGL
-          viewState={viewport}
-          layers={[layer]}
-          getTooltip={({ object }) =>
-            object && `${object.name}\n${object.address}`
-          }
-        />
       </div>
     );
   }
