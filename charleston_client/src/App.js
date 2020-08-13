@@ -2,14 +2,13 @@ import React, { useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import Layout from "./components/Layout/Layout";
-import Homepage from './components/Homepage/Homepage'
-
+import Homepage from "./components/Homepage/Homepage";
+import { Route, Switch } from "react-router-dom";
+import Login from "./components/Login/Login";
 
 function App() {
   const app_id = process.env.REACT_APP_app_id;
   const app_key = process.env.REACT_APP_app_key;
-
-  
 
   // useEffect(() => {
   //   const makeAPICall = () => {
@@ -24,12 +23,13 @@ function App() {
   //   makeAPICall();
   // }, []);
 
- 
-
   return (
     <div className="App">
       <Layout>
-        <Homepage />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
       </Layout>
     </div>
   );

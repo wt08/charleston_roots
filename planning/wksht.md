@@ -99,11 +99,11 @@ add Nav component x
 add Footer comp x  
 add login button  
 generate Map x  
-create markets/times/address model with seeded data  x
-restrict to only GET routes  x
-have markets locations display on map thru API call  x
-allow user to find closest by entering zipcode  x
-when market location on map clicked, display info from market/time/address models  x
+create markets/times/address model with seeded data x
+restrict to only GET routes x
+have markets locations display on map thru API call x
+allow user to find closest by entering zipcode x
+when market location on map clicked, display info from market/time/address models x
 style
 
 DEPLOY  
@@ -201,3 +201,17 @@ React-Map-GL
 Mapbox GL JS
 
 ## Hurdles
+
+Had to manipulate backend data to fit format needed to display pins on map. Mapped over data from API call and transformed array:
+
+```
+markets.map((market) => {
+                return {
+                  name: market.name,
+                  address: market.address,
+                  exits: market.exits,
+                  coordinates: [market.long, market.lat],
+                };
+              })
+
+```
