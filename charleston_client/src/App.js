@@ -24,8 +24,6 @@ function App() {
   //   makeAPICall();
   // }, []);
 
-
-
  
 
   return (

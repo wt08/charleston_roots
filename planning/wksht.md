@@ -98,12 +98,12 @@ add Layout component x
 add Nav component x  
 add Footer comp x  
 add login button  
-generate Map  
-create markets/times/address model with seeded data  
-create GET routes  
-have markets locations display on map thru API call  
-allow user to find closest by entering zipcode  
-when market location on map clicked, display info from market/time/address models  
+generate Map x  
+create markets/times/address model with seeded data  x
+restrict to only GET routes  x
+have markets locations display on map thru API call  x
+allow user to find closest by entering zipcode  x
+when market location on map clicked, display info from market/time/address models  x
 style
 
 DEPLOY  
@@ -180,11 +180,11 @@ MVP:
 | add Footer | H | .5hrs | .5hrs | hrs |
 | add login button | H | .5rs | -hrs | hrs |
 | generate map | H | 4rs | 4hrs | hrs |
-| create markets/times/address model with seeded data | H | .5rs | 1hrs 10:00 - | hrs |
-| create GET routes | H | .5rs | hrs | hrs |
-| have markets locations display on map thru API call | H | .5rs | hrs | hrs |
+| create markets/times/address scaffold with seeded data | H | .5rs | .5hrs | hrs |
+| restrict to only GET route | H | .5rs | 5:00 - hrs | hrs |
+| have markets locations display on map thru API call | H | .5rs | 3hrs | hrs |
 | allow user to find closest by entering zipcode | H | 3rs | 3hrs | hrs |
-| when market location on map clicked, display info from market/time/address models | H | 3rs | hrs | hrs |
+| when market location on map clicked, display info from market/time/address models | H | 3rs | 0hrs | hrs |
 | style homepage | H | 2hrs | hrs | hrs |
 | Total | H | hrs | -hrs | hrs |
 

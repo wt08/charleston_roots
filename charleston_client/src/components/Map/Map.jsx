@@ -71,7 +71,7 @@ class Map extends Component {
     });
 
     return (
-      <div style={{ height: "100vh" }}>
+      <div className="map">
         <MapGL
           //   referencing Map class
           ref={this.mapRef}
