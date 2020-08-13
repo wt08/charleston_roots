@@ -181,11 +181,12 @@ MVP:
 | add login button | H | .5rs | -hrs | hrs |
 | generate map | H | 4rs | 4hrs | hrs |
 | create markets/times/address scaffold with seeded data | H | .5rs | .5hrs | hrs |
-| restrict to only GET route | H | .5rs | 5:00 - hrs | hrs |
+| restrict to only GET route | H | .5rs | -hrs | hrs |
 | have markets locations display on map thru API call | H | .5rs | 3hrs | hrs |
 | allow user to find closest by entering zipcode | H | 3rs | 3hrs | hrs |
 | when market location on map clicked, display info from market/time/address models | H | 3rs | 0hrs | hrs |
 | style homepage | H | 2hrs | hrs | hrs |
+| login | H | -hrs | 1.5hrs | hrs |
 | Total | H | hrs | -hrs | hrs |
 
 POSTMVP:  
@@ -215,3 +216,5 @@ markets.map((market) => {
               })
 
 ```
+
+Redirect
