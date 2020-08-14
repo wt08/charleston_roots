@@ -222,4 +222,4 @@ markets.map((market) => {
 
 ```
 
-Redirect
+Redirect: had issues with getting redirect to work. Initially had it in onSubmit function, ended up putting it in body and making it conditional on a state boolean.
