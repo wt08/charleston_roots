@@ -4,12 +4,34 @@ import { Redirect } from "react-router-dom";
 
 const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [input, setInput] = useState({ email: "", username: "" });
-console.log(isLoggedIn)
+  const [existingUserInput, setExistingUserInput] = useState({
+    email: "",
+    username: "",
+  });
+  const [newUserInput, setNewUserInput] = useState({ email: "", username: "" });
 
-  const handleChange = (event) => {
-    setInput({
-      ...input,
+  const handleChangeExistingUser = (event) => {
+    setExistingUserInput({
+      ...existingUserInput,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  // const handleSubmitExistingUser = (event) => {
+  //   axios
+  //     .get(
+  //       `https://api.edamam.com/search?q=chicken&app_id=${app_id}&app_key=${app_key}`
+  //     )
+  //     .then((res) => {
+  //       const data = res.data;
+  //       console.log(data);
+  //     })
+  //     .catch(console.error);
+  // };
+
+  const handleChangeNewUser = (event) => {
+    setNewUserInput({
+      ...newUserInput,
       [event.target.name]: event.target.value,
     });
   };
@@ -19,7 +41,7 @@ console.log(isLoggedIn)
     axios({
       url: `http://localhost:3000/users`,
       method: "POST",
-      data: input,
+      data: newUserInput,
     })
       .then(setIsLoggedIn(true))
       .catch(console.error);
@@ -53,15 +75,15 @@ console.log(isLoggedIn)
       <form onSubmit={handleSubmitNewUser}>
         <input
           placeholder="Add your email"
-          value={input.email}
+          value={newUserInput.email}
           name="email"
-          onChange={handleChange}
+          onChange={handleChangeNewUser}
         />
         <input
           placeholder="Create a username"
-          value={input.username}
+          value={newUserInput.username}
           name="username"
-          onChange={handleChange}
+          onChange={handleChangeNewUser}
         />
         <button type="submit">Create Account</button>
       </form>

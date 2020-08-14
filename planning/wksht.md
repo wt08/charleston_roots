@@ -187,6 +187,7 @@ MVP:
 | when market location on map clicked, display info from market/time/address models | H | 3rs | 0hrs | hrs |
 | style homepage | H | 2hrs | hrs | hrs |
 | login | H | -hrs | 1.5hrs 7:00 - | hrs |
+| look into useContext for manipulating loginbutton upon login | H | -hrs | 1.5hrs 7:00 - | hrs |
 | Total | H | hrs | -hrs | hrs |
 
 POSTMVP:  

@@ -8,7 +8,6 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
       <h4>Home</h4>
       <h4>Find Recipes</h4>
       <h4>Favorite Recipes</h4>
-      <h4>Account Settings</h4>
     </div>
   );
 };
