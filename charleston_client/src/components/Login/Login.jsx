@@ -3,31 +3,24 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 
 const Login = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [existingUserInput, setExistingUserInput] = useState({
-    email: "",
-    username: "",
-  });
+  const [existingUserInput, setExistingUserInput] = useState("");
   const [newUserInput, setNewUserInput] = useState({ email: "", username: "" });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isInvalidUser, setIsInvalidUser] = useState(false);
+  console.log(existingUserInput);
 
   const handleChangeExistingUser = (event) => {
-    setExistingUserInput({
-      ...existingUserInput,
-      [event.target.name]: event.target.value,
-    });
+    setExistingUserInput(event.target.value);
   };
 
-  // const handleSubmitExistingUser = (event) => {
-  //   axios
-  //     .get(
-  //       `https://api.edamam.com/search?q=chicken&app_id=${app_id}&app_key=${app_key}`
-  //     )
-  //     .then((res) => {
-  //       const data = res.data;
-  //       console.log(data);
-  //     })
-  //     .catch(console.error);
-  // };
+  const handleSubmitExistingUser = (event) => {
+    // normally onSubmit renders new page. Since React is single page app, need to prevent this default.
+    event.preventDefault();
+    axios
+      .get(`http://localhost:3000/users/username/${existingUserInput}`)
+      .then((res) => (res.data ? setIsLoggedIn(true) : setIsInvalidUser(true)))
+      .catch(console.error);
+  };
 
   const handleChangeNewUser = (event) => {
     setNewUserInput({
@@ -49,22 +42,17 @@ const Login = () => {
 
   return (
     <div>
-      {/* <h3>Login</h3>
-      <form onSubmit="">
-        <input
-          placeholder="Email"
-          value={input.email}
-          name="email"
-          onChange={handleChange}
-        />
+      <h3>Login</h3>
+      <form onSubmit={handleSubmitExistingUser}>
         <input
           placeholder="Username"
-          value={input.username}
+          value={existingUserInput.username}
           name="username"
-          onChange={handleChange}
+          onChange={handleChangeExistingUser}
         />
         <button type="submit">Login</button>
-      </form> */}
+        {isInvalidUser ? <p>Invalid username</p> : null}
+      </form>
 
       <br />
       <br />

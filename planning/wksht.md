@@ -163,8 +163,8 @@ Extra styling/effects
 | ------------- | ----------------------------------------------------------- | ---------- |
 | Day 1 (Tues)  | Finish planning & Layout, Nav, Footer from Homepage section | Complete   |
 | Day 2 (Wed)   | Homepage partial                                            | Complete   |
-| Day 3 (Thurs) | Rest of homepage, Deploy backend                            | Incomplete |
-| Day 4 (Fri)   | User Account, Recipe Generator                              | Incomplete |
+| Day 3 (Thurs) | Rest of homepage, partial user account                      | Complete   |
+| Day 4 (Fri)   | Rest of User Account, Recipe Generator, Deploy backend      | Incomplete |
 | Day 5 (Sat)   | TBD                                                         | Incomplete |
 | Day 5 (Sun)   | Recipe Generator Results                                    | Incomplete |
 | Day 5 (Mon)   | Individual/Fave Recipe & Linking/Routing                    | Incomplete |
@@ -186,7 +186,7 @@ MVP:
 | allow user to find closest by entering zipcode | H | 3rs | 3hrs | hrs |
 | when market location on map clicked, display info from market/time/address models | H | 3rs | 0hrs | hrs |
 | style homepage | H | 2hrs | hrs | hrs |
-| login | H | -hrs | 1.5hrs 7:00 - | hrs |
+| login | H | -hrs | 2hrs 11:30 - | hrs |
 | look into useContext for manipulating loginbutton upon login | H | -hrs | 1.5hrs 7:00 - | hrs |
 | Total | H | hrs | -hrs | hrs |
 
