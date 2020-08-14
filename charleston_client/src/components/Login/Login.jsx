@@ -3,7 +3,9 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 
 const Login = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [input, setInput] = useState({ email: "", username: "" });
+console.log(isLoggedIn)
 
   const handleChange = (event) => {
     setInput({
@@ -19,7 +21,7 @@ const Login = () => {
       method: "POST",
       data: input,
     })
-      .then(<Redirect to='/' />)
+      .then(setIsLoggedIn(true))
       .catch(console.error);
   };
 
@@ -63,6 +65,7 @@ const Login = () => {
         />
         <button type="submit">Create Account</button>
       </form>
+      {isLoggedIn ? <Redirect to="/" /> : null}
     </div>
   );
 };
