@@ -25,12 +25,11 @@ function App() {
   //   makeAPICall();
   // }, []);
 
-  const [user, setUser] = useState('');
-  console.log(user)
+  const [user, setUser] = useState(null);
 
   return (
     <div className="App">
-      <Layout>
+      <Layout user={user}>
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route
