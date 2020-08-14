@@ -189,7 +189,7 @@ MVP:
 | create user model | H | 1hrs | .5hrs | hrs |
 | create get, post, and delete routes | H | 1hrs | .5hrs | hrs |
 | create Login page w/ API call | H | 3hrs | 2.5hrs | hrs |
-| look into useContext for manipulating loginbutton upon login | H | 1hrs | hrs | hrs |
+| manipulate loginbutton upon login | H | 1hrs | 1hrs 4:30- | hrs |
 | create account_settings page | H | 2hrs | hrs | hrs |
 | deploy backend | H | 1hrs | hrs | hrs |
 | Total | H | hrs | -hrs | hrs |
@@ -223,3 +223,5 @@ markets.map((market) => {
 ```
 
 Redirect: had issues with getting redirect to work. Initially had it in onSubmit function, ended up putting it in body and making it conditional on a state boolean.
+
+

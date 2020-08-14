@@ -13,11 +13,11 @@ const Login = ({ setUser }) => {
   const [isInvalidUser, setIsInvalidUser] = useState(false);
   const [isTakenUser, setIsTakenUser] = useState(false);
 
-  if (isLoggedIn && existingUserInput.email) {
-    setUser(existingUserInput);
-  } else if (isLoggedIn && newUserInput.email) {
-    setUser(newUserInput);
-  }
+  // if (isLoggedIn && existingUserInput.email) {
+  //   setUser(existingUserInput);
+  // } else if (isLoggedIn && newUserInput.email) {
+  //   setUser(newUserInput);
+  // }
 
   const handleChangeExistingUser = (event) => {
     setExistingUserInput({
@@ -31,7 +31,11 @@ const Login = ({ setUser }) => {
     event.preventDefault();
     axios
       .get(`http://localhost:3000/users/username/${existingUserInput.username}`)
-      .then((res) => (res.data ? setIsLoggedIn(true) : setIsInvalidUser(true)))
+      .then((res) =>
+        res.data
+          ? setUser(existingUserInput) & setIsLoggedIn(true)
+          : setIsInvalidUser(true)
+      )
       .catch(console.error);
   };
 
@@ -49,7 +53,10 @@ const Login = ({ setUser }) => {
       method: "POST",
       data: newUserInput,
     })
-      .then((res) => (res.data ? setIsLoggedIn(true) : null))
+      .then((res) =>
+        res.data ? setUser(newUserInput) & setIsLoggedIn(true) : null
+      )
+      // fix the isTakenUser alert error!
       .catch(console.error & setIsTakenUser(true));
   };
 
@@ -62,12 +69,14 @@ const Login = ({ setUser }) => {
           value={existingUserInput.email}
           name="email"
           onChange={handleChangeExistingUser}
+          required
         />
         <input
           placeholder="Username"
           value={existingUserInput.username}
           name="username"
           onChange={handleChangeExistingUser}
+          required
         />
         <button type="submit">Login</button>
         {isInvalidUser ? <p>Invalid username</p> : null}
@@ -85,12 +94,14 @@ const Login = ({ setUser }) => {
           value={newUserInput.email}
           name="email"
           onChange={handleChangeNewUser}
+          required
         />
         <input
           placeholder="Create a username"
           value={newUserInput.username}
           name="username"
           onChange={handleChangeNewUser}
+          required
         />
         <button type="submit">Create Account</button>
         {isTakenUser ? <p>Username taken. Please try another.</p> : null}
