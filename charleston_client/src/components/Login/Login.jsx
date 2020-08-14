@@ -7,7 +7,8 @@ const Login = () => {
   const [newUserInput, setNewUserInput] = useState({ email: "", username: "" });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isInvalidUser, setIsInvalidUser] = useState(false);
-  console.log(existingUserInput);
+  const [isTakenUser, setIsTakenUser] = useState(false);
+  console.log(isTakenUser);
 
   const handleChangeExistingUser = (event) => {
     setExistingUserInput(event.target.value);
@@ -36,8 +37,8 @@ const Login = () => {
       method: "POST",
       data: newUserInput,
     })
-      .then(setIsLoggedIn(true))
-      .catch(console.error);
+      .then((res) => res.data ? setIsLoggedIn(true) : null)
+      .catch(console.error & setIsTakenUser(true));
   };
 
   return (
@@ -74,6 +75,7 @@ const Login = () => {
           onChange={handleChangeNewUser}
         />
         <button type="submit">Create Account</button>
+        {isTakenUser ? <p>Username taken. Please try another.</p> : null}
       </form>
       {isLoggedIn ? <Redirect to="/" /> : null}
     </div>

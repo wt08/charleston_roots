@@ -97,13 +97,13 @@ HOMEPAGE
 add Layout component x  
 add Nav component x  
 add Footer comp x  
-add login button  
+add login button x  
 generate Map x  
-create markets/times/address model with seeded data x
-restrict to only GET routes x
-have markets locations display on map thru API call x
-allow user to find closest by entering zipcode x
-when market location on map clicked, display info from market/time/address models x
+create markets/times model with seeded data x  
+restrict to only GET routes x  
+have markets locations display on map thru API call x  
+allow user to find closest by entering zipcode x  
+when market location on map clicked, display info from market/time/address models x  
 style
 
 DEPLOY  
@@ -111,14 +111,14 @@ backend
 frontend
 
 NAV  
-create hamburger menu  
+create hamburger menu x  
 style
 
 USER ACCOUNT  
-create user model  
-create get, post, and delete routes  
-create Login page w/ API call  
-link Login page to homepage  
+create user model x  
+create get(pluse custom get by username), post, and delete routes x
+create Login page w/ API call x  
+link Login page to homepage x
 create account_settings page that displays username, email, and ability to delete
 style
 
@@ -186,8 +186,12 @@ MVP:
 | allow user to find closest by entering zipcode | H | 3rs | 3hrs | hrs |
 | when market location on map clicked, display info from market/time/address models | H | 3rs | 0hrs | hrs |
 | style homepage | H | 2hrs | hrs | hrs |
-| login | H | -hrs | 2hrs 11:30 - | hrs |
-| look into useContext for manipulating loginbutton upon login | H | -hrs | 1.5hrs 7:00 - | hrs |
+| create user model | H | 1hrs | .5hrs | hrs |
+| create get, post, and delete routes | H | 1hrs | .5hrs | hrs |
+| create Login page w/ API call | H | 3hrs | 2.5hrs | hrs |
+| look into useContext for manipulating loginbutton upon login | H | 1hrs | hrs | hrs |
+| create account_settings page | H | 2hrs | hrs | hrs |
+| deploy backend | H | 1hrs | hrs | hrs |
 | Total | H | hrs | -hrs | hrs |
 
 POSTMVP:  
