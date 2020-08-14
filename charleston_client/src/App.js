@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import Layout from "./components/Layout/Layout";
@@ -6,9 +6,11 @@ import Homepage from "./components/Homepage/Homepage";
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/Login/Login";
 
+export const UserContext = React.createContext();
+
 function App() {
-  const app_id = process.env.REACT_APP_app_id;
-  const app_key = process.env.REACT_APP_app_key;
+  // const app_id = process.env.REACT_APP_app_id;
+  // const app_key = process.env.REACT_APP_app_key;
 
   // useEffect(() => {
   //   const makeAPICall = () => {
@@ -23,12 +25,21 @@ function App() {
   //   makeAPICall();
   // }, []);
 
+  const [user, setUser] = useState('');
+  console.log(user)
+
   return (
     <div className="App">
       <Layout>
         <Switch>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="/login" component={Login} />
+          <Route
+            exact
+            path="/login"
+            render={(routerProps) => (
+              <Login {...routerProps} setUser={setUser} />
+            )}
+          />
         </Switch>
       </Layout>
     </div>

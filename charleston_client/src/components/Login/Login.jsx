@@ -2,23 +2,35 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 
-const Login = () => {
-  const [existingUserInput, setExistingUserInput] = useState("");
+const Login = ({ setUser }) => {
+  const [existingUserInput, setExistingUserInput] = useState({
+    email: "",
+    username: "",
+  });
+
   const [newUserInput, setNewUserInput] = useState({ email: "", username: "" });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isInvalidUser, setIsInvalidUser] = useState(false);
   const [isTakenUser, setIsTakenUser] = useState(false);
-  console.log(isTakenUser);
+
+  if (isLoggedIn && existingUserInput.email) {
+    setUser(existingUserInput);
+  } else if (isLoggedIn && newUserInput.email) {
+    setUser(newUserInput);
+  }
 
   const handleChangeExistingUser = (event) => {
-    setExistingUserInput(event.target.value);
+    setExistingUserInput({
+      ...existingUserInput,
+      [event.target.name]: event.target.value,
+    });
   };
 
   const handleSubmitExistingUser = (event) => {
     // normally onSubmit renders new page. Since React is single page app, need to prevent this default.
     event.preventDefault();
     axios
-      .get(`http://localhost:3000/users/username/${existingUserInput}`)
+      .get(`http://localhost:3000/users/username/${existingUserInput.username}`)
       .then((res) => (res.data ? setIsLoggedIn(true) : setIsInvalidUser(true)))
       .catch(console.error);
   };
@@ -37,7 +49,7 @@ const Login = () => {
       method: "POST",
       data: newUserInput,
     })
-      .then((res) => res.data ? setIsLoggedIn(true) : null)
+      .then((res) => (res.data ? setIsLoggedIn(true) : null))
       .catch(console.error & setIsTakenUser(true));
   };
 
@@ -45,6 +57,12 @@ const Login = () => {
     <div>
       <h3>Login</h3>
       <form onSubmit={handleSubmitExistingUser}>
+        <input
+          placeholder="Add your email"
+          value={existingUserInput.email}
+          name="email"
+          onChange={handleChangeExistingUser}
+        />
         <input
           placeholder="Username"
           value={existingUserInput.username}
