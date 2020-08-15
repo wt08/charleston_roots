@@ -13,12 +13,6 @@ const Login = ({ setUser }) => {
   const [isInvalidUser, setIsInvalidUser] = useState(false);
   const [isTakenUser, setIsTakenUser] = useState(false);
 
-  // if (isLoggedIn && existingUserInput.email) {
-  //   setUser(existingUserInput);
-  // } else if (isLoggedIn && newUserInput.email) {
-  //   setUser(newUserInput);
-  // }
-
   const handleChangeExistingUser = (event) => {
     setExistingUserInput({
       ...existingUserInput,

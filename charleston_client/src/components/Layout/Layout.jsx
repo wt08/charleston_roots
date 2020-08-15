@@ -11,7 +11,7 @@ const Layout = (props) => {
   return (
     <div>
       <Nav />
-  {props.user ? <button className="account">{props.user.username}</button> : <Link to={'/login'}><button className='login'>Login</button></Link>}
+  {props.user ? <Link to={'/accountsettings'}><button className="account">{props.user.username}</button></Link> : <Link to={'/login'}><button className='login'>Login</button></Link>}
       {props.children}
       <Footer />
     </div>

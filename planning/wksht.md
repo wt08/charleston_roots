@@ -189,8 +189,8 @@ MVP:
 | create user model | H | 1hrs | .5hrs | hrs |
 | create get, post, and delete routes | H | 1hrs | .5hrs | hrs |
 | create Login page w/ API call | H | 3hrs | 2.5hrs | hrs |
-| manipulate loginbutton upon login | H | 1hrs | 1hrs 4:30- | hrs |
-| create account_settings page | H | 2hrs | hrs | hrs |
+| manipulate loginbutton upon login | H | 1hrs | 2.5hrs | hrs |
+| create account_settings page | H | 2hrs | hrs 9:30 - | hrs |
 | deploy backend | H | 1hrs | hrs | hrs |
 | Total | H | hrs | -hrs | hrs |
 
@@ -201,10 +201,16 @@ POSTMVP:
 | Styling/effcts| L | 10hrs | -hrs | hrs |
 | Total | L | 18hrs | -hrs | hrs |
 
+## Bugs/Improvements
+Fix that even when new user is unique, isTaken alert still pops up!  
+keep user logged in, even during page refresh  
+Break up map into separate components for readability
+
 ## Additional Libraries
 
 React-Map-GL
 Mapbox GL JS
+Deck GL
 
 ## Hurdles
 
@@ -223,5 +229,3 @@ markets.map((market) => {
 ```
 
 Redirect: had issues with getting redirect to work. Initially had it in onSubmit function, ended up putting it in body and making it conditional on a state boolean.
-
-

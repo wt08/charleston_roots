@@ -1,12 +1,11 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import Layout from "./components/Layout/Layout";
 import Homepage from "./components/Homepage/Homepage";
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/Login/Login";
-
-export const UserContext = React.createContext();
+import AccountSettings from './components/AccountSettings/AccountSettings'
 
 function App() {
   // const app_id = process.env.REACT_APP_app_id;
@@ -39,6 +38,7 @@ function App() {
               <Login {...routerProps} setUser={setUser} />
             )}
           />
+          <Route exact path="/accountsettings" component={AccountSettings} />
         </Switch>
       </Layout>
     </div>
