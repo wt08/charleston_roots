@@ -191,7 +191,8 @@ MVP:
 | create Login page w/ API call | H | 3hrs | 2.5hrs | hrs |
 | manipulate loginbutton upon login | H | 1hrs | 2.5hrs | hrs |
 | create account_settings page | H | 2hrs | 1hrs | hrs |
-| deploy backend | H | 1hrs | hrs 10:30 - | hrs |
+| deploy backend | H | 1hrs | 1hrs | hrs |
+| deploy frontend | H | 1hrs | hrs 11:30 - | hrs |
 | Total | H | hrs | -hrs | hrs |
 
 POSTMVP:  
