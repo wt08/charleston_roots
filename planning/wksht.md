@@ -119,7 +119,7 @@ create user model x
 create get(pluse custom get by username), post, and delete routes x
 create Login page w/ API call x  
 link Login page to homepage x
-create account_settings page that displays username, email, and ability to delete
+create account_settings page that displays username, email, and ability to delete x  
 style
 
 RECIPE GENERATOR  
@@ -190,8 +190,8 @@ MVP:
 | create get, post, and delete routes | H | 1hrs | .5hrs | hrs |
 | create Login page w/ API call | H | 3hrs | 2.5hrs | hrs |
 | manipulate loginbutton upon login | H | 1hrs | 2.5hrs | hrs |
-| create account_settings page | H | 2hrs | hrs 9:30 - | hrs |
-| deploy backend | H | 1hrs | hrs | hrs |
+| create account_settings page | H | 2hrs | 1hrs | hrs |
+| deploy backend | H | 1hrs | hrs 10:30 - | hrs |
 | Total | H | hrs | -hrs | hrs |
 
 POSTMVP:  
@@ -202,6 +202,7 @@ POSTMVP:
 | Total | L | 18hrs | -hrs | hrs |
 
 ## Bugs/Improvements
+
 Fix that even when new user is unique, isTaken alert still pops up!  
 keep user logged in, even during page refresh  
 Break up map into separate components for readability

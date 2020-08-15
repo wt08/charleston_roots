@@ -25,7 +25,7 @@ const Homepage = () => {
   useEffect(() => {
     const makeAPICall = () => {
       axios
-        .get(`http://localhost:3000/markets`)
+        .get(`https://srced-chs.herokuapp.com/markets`)
         .then((res) => {
           const data = res.data;
           setMarkets(data);

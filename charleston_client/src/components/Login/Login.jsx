@@ -24,7 +24,7 @@ const Login = ({ setUser }) => {
     // normally onSubmit renders new page. Since React is single page app, need to prevent this default.
     event.preventDefault();
     axios
-      .get(`http://localhost:3000/users/username/${existingUserInput.username}`)
+      .get(`https://srced-chs.herokuapp.com/users/username/${existingUserInput.username}`)
       .then((res) =>
         res.data
         // set "global" user variable from App
@@ -44,7 +44,7 @@ const Login = ({ setUser }) => {
   const handleSubmitNewUser = (event) => {
     event.preventDefault();
     axios({
-      url: `http://localhost:3000/users`,
+      url: `https://srced-chs.herokuapp.com/users`,
       method: "POST",
       data: newUserInput,
     })

@@ -9,7 +9,7 @@ const AccountSettings = ({ user, setUser }) => {
   const handleClickDeleteUser = (event) => {
     event.preventDefault();
     axios({
-      url: `http://localhost:3000/users/${user.id}`,
+      url: `https://srced-chs.herokuapp.com/users/${user.id}`,
       method: "DELETE",
     })
       // set "global" user from app to null
