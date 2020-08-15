@@ -3,7 +3,8 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 
 const AccountSettings = ({ user, setUser }) => {
-  const [isDeleted, setIsDeleted] = useState(false);
+  // variable to reflect status of need to redirect
+  const [isRedirect, setIsRedirect] = useState(false);
 
   const handleClickDeleteUser = (event) => {
     event.preventDefault();
@@ -12,17 +13,23 @@ const AccountSettings = ({ user, setUser }) => {
       method: "DELETE",
     })
       // set "global" user from app to null
-      .then(setUser(null) & setIsDeleted(true))
+      .then(setUser(null) & setIsRedirect(true))
       .catch(console.error);
+  };
+
+  const handleClickLogout = () => {
+    setUser(null);
+    setIsRedirect(true);
   };
 
   return (
     <div>
-      <h3>Username:</h3>
-      <h3>Email:</h3>
-      <button>Logout</button>
+      {/* conditionals make sure this doesn't error out when no user logged in */}
+      {user ? <h3>Username: {user.username}</h3> : null}
+      {user ? <h3>Email: {user.email}</h3> : null}
+      <button onClick={handleClickLogout}>Logout</button>
       <button onClick={handleClickDeleteUser}>Delete</button>
-      {isDeleted ? <Redirect to="/" /> : null}
+      {isRedirect ? <Redirect to="/" /> : null}
     </div>
   );
 };
