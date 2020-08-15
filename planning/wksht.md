@@ -107,7 +107,7 @@ when market location on map clicked, display info from market/time/address model
 style
 
 DEPLOY  
-backend  
+backend X
 frontend
 
 NAV  
@@ -150,8 +150,8 @@ use edamam_uri in fav model top make edama API to get recipe data
 style
 
 LINKING/ROUTING  
-create routes in App.js  
-link nav elements to components
+create routes in App.js x  
+link nav elements to components x
 
 POST MVP:
 Calendar  
@@ -163,11 +163,11 @@ Extra styling/effects
 | ------------- | ----------------------------------------------------------- | ---------- |
 | Day 1 (Tues)  | Finish planning & Layout, Nav, Footer from Homepage section | Complete   |
 | Day 2 (Wed)   | Homepage partial                                            | Complete   |
-| Day 3 (Thurs) | Rest of homepage, partial user account                      | Complete   |
-| Day 4 (Fri)   | Rest of User Account, Recipe Generator, Deploy backend      | Incomplete |
-| Day 5 (Sat)   | TBD                                                         | Incomplete |
-| Day 5 (Sun)   | Recipe Generator Results                                    | Incomplete |
-| Day 5 (Mon)   | Individual/Fave Recipe & Linking/Routing                    | Incomplete |
+| Day 3 (Thurs) | Rest of homepage                                            | Complete   |
+| Day 4 (Fri)   | Partial user account                                        | Complete   |
+| Day 5 (Sat)   | Rest of user account, backend deploy                        | Complete   |
+| Day 5 (Sun)   | Deploy frontend, Recipe Generator                           | Incomplete |
+| Day 5 (Mon)   | Recipe Generator Results/Individual/Fave Recipe             | Incomplete |
 | Day 5 (Tues)  | Final Touches                                               | Incomplete |
 
 ## Time Frames
@@ -190,9 +190,9 @@ MVP:
 | create get, post, and delete routes | H | 1hrs | .5hrs | hrs |
 | create Login page w/ API call | H | 3hrs | 2.5hrs | hrs |
 | manipulate loginbutton upon login | H | 1hrs | 2.5hrs | hrs |
-| create account_settings page | H | 2hrs | 1hrs | hrs |
+| create account*settings page | H | 2hrs | 1hrs | hrs |
 | deploy backend | H | 1hrs | 1hrs | hrs |
-| deploy frontend | H | 1hrs | hrs 11:30 - | hrs |
+| deploy frontend | H | 1hrs | 1hrs | hrs | \_STILL NEED TO DO THIS*
 | Total | H | hrs | -hrs | hrs |
 
 POSTMVP:  
