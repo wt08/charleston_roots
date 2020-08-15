@@ -27,7 +27,8 @@ const Login = ({ setUser }) => {
       .get(`http://localhost:3000/users/username/${existingUserInput.username}`)
       .then((res) =>
         res.data
-          ? setUser(existingUserInput) & setIsLoggedIn(true)
+        // set "global" user variable from App
+          ? setUser(res.data) & setIsLoggedIn(true)
           : setIsInvalidUser(true)
       )
       .catch(console.error);
@@ -48,7 +49,8 @@ const Login = ({ setUser }) => {
       data: newUserInput,
     })
       .then((res) =>
-        res.data ? setUser(newUserInput) & setIsLoggedIn(true) : null
+      // set "global" user variable from App
+        res.data ? setUser(res.data) & setIsLoggedIn(true) : null
       )
       // fix the isTakenUser alert error!
       .catch(console.error & setIsTakenUser(true));

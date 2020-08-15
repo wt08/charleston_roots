@@ -5,7 +5,7 @@ import Layout from "./components/Layout/Layout";
 import Homepage from "./components/Homepage/Homepage";
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/Login/Login";
-import AccountSettings from './components/AccountSettings/AccountSettings'
+import AccountSettings from "./components/AccountSettings/AccountSettings";
 
 function App() {
   // const app_id = process.env.REACT_APP_app_id;
@@ -32,13 +32,17 @@ function App() {
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route
-            exact
             path="/login"
             render={(routerProps) => (
               <Login {...routerProps} setUser={setUser} />
             )}
           />
-          <Route exact path="/accountsettings" component={AccountSettings} />
+          <Route
+            path="/accountsettings"
+            render={(routerProps) => (
+              <AccountSettings {...routerProps} user={user} setUser={setUser} />
+            )}
+          />
         </Switch>
       </Layout>
     </div>
