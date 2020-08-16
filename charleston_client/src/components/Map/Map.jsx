@@ -45,7 +45,6 @@ class Map extends Component {
   };
 
   render() {
-    // a little confused how this is working
     const { viewport, searchResultLayer } = this.state;
 
     // sets style of icon
