@@ -1,48 +1,78 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import CardColumns from 'react-bootstrap/CardColumns';
-import './RecipeGenerator.css'
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import CardColumns from "react-bootstrap/CardColumns";
+import "./RecipeGenerator.css";
 
 const RecipeGenerator = () => {
-
-const [produce, setProduce] = useState(null)
-console.log(produce)
+  const [produce, setProduce] = useState(null);
+  const [selected, setSelected] = useState([]);
+  console.log(selected);
 
   useEffect(() => {
     const makeAPICall = () => {
       axios
-        .get(
-          `https://srced-chs.herokuapp.com/produces`
-        )
+        .get(`https://srced-chs.herokuapp.com/produces`)
         .then((res) => {
           const data = res.data;
-          setProduce(data)
+          setProduce(data);
         })
         .catch(console.error);
     };
     makeAPICall();
   }, []);
 
+  const handleOnClickSelect = (produceClicked) => {
+    setSelected([...selected, produceClicked]);
+  };
+
+  //   not working!!!
+  const handleOnClickUnselect = (produceClicked) => {
+    console.log(produceClicked);
+    const index = selected.indexOf(produceClicked);
+    console.log(index);
+    selected.splice(index, 1);
+  };
+
   return (
     <div>
       <h1>Recipe Generator</h1>
       <h4>Choose up to 4 and then click Find Recipes</h4>
       <div className="produceList">
-      <CardColumns>
-      {produce ? produce.map(produce => {
-          return (
-            <Card>
-            <Card.Img variant="top" src={produce.img} alt={produce.name}/>
-            <Card.Body>
-          <Card.Title>{produce.name}</Card.Title>
-              <Button variant="primary">Select</Button>
-            </Card.Body>
-          </Card> 
-          )
-      }): null}
-      </CardColumns>
+        <CardColumns>
+          {produce
+            ? produce.map((produce) => {
+                return (
+                  <Card>
+                    <Card.Img
+                      variant="top"
+                      src={produce.img}
+                      alt={produce.name}
+                    />
+                    <Card.Body>
+                      <Card.Title>{produce.name}</Card.Title>
+                      {selected.includes(produce.name) ? (
+                        <Button
+                          onClick={() => handleOnClickUnselect(produce.name)}
+                          variant="primary"
+                        >
+                          Unselect
+                        </Button>
+                      ) : (
+                        <Button
+                          onClick={() => handleOnClickSelect(produce.name)}
+                          variant="primary"
+                        >
+                          Select
+                        </Button>
+                      )}
+                    </Card.Body>
+                  </Card>
+                );
+              })
+            : null}
+        </CardColumns>
       </div>
     </div>
   );
