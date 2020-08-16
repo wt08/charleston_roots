@@ -9,6 +9,7 @@ const RecipeGenerator = () => {
   const [produce, setProduce] = useState(null);
   const [selected, setSelected] = useState([]);
   console.log(selected);
+  const [showSelect, setShowSelect] = useState(true)
 
   useEffect(() => {
     const makeAPICall = () => {
@@ -30,9 +31,9 @@ const RecipeGenerator = () => {
   const handleOnClickUnselect = (produceClicked) => {
     const index = selected.indexOf(produceClicked);
     // copy of selected to be mutated. Couldn't splice useState selected and return mutated array.
-    let selectedCopy = selected 
+    let selectedCopy = selected;
     selectedCopy.splice(index, 1);
-    setSelected(selectedCopy)
+    setSelected(selectedCopy);
   };
 
   return (
@@ -52,21 +53,22 @@ const RecipeGenerator = () => {
                     />
                     <Card.Body>
                       <Card.Title>{produce.name}</Card.Title>
-                      {selected.includes(produce.name) ? (
-                        <Button
-                          onClick={() => handleOnClickUnselect(produce.name)}
-                          variant="primary"
-                        >
-                          Unselect
-                        </Button>
-                      ) : (
-                        <Button
-                          onClick={() => handleOnClickSelect(produce.name)}
-                          variant="primary"
-                        >
-                          Select
-                        </Button>
-                      )}
+
+                      <Button
+                        className={showSelect ? null : "hideSelect"}
+                        onClick={() => handleOnClickUnselect(produce.name)}
+                        variant="primary"
+                      >
+                        Unselect
+                      </Button>
+
+                      <Button
+                      className={showSelect ? "hideUnselect" : null }
+                        onClick={() => handleOnClickSelect(produce.name)}
+                        variant="primary"
+                      >
+                        Select
+                      </Button>
                     </Card.Body>
                   </Card>
                 );
