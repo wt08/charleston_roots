@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Map from "../Map/Map";
 import axios from "axios";
 import "./Homepage.css";
+import {Link} from 'react-router-dom'
 
 const Homepage = () => {
   const [markets, setMarkets] = useState(null);
@@ -44,7 +45,7 @@ const Homepage = () => {
       </h4>
       <h4>
         Find a close Farmers Market by entering your Zipcode below and check out
-        our Recipe Generator!
+        our <Link to={"/recipegenerator"}>Recipe Generator!</Link>
       </h4>
       {/* if markets variable has content, map over each element and create new object. Pass down this object */}
       <Map

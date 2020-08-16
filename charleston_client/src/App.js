@@ -6,6 +6,7 @@ import Homepage from "./components/Homepage/Homepage";
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/Login/Login";
 import AccountSettings from "./components/AccountSettings/AccountSettings";
+import RecipeGenerator from "./components/RecipeGenerator/RecipeGenerator";
 
 function App() {
   // const app_id = process.env.REACT_APP_app_id;
@@ -42,6 +43,10 @@ function App() {
             render={(routerProps) => (
               <AccountSettings {...routerProps} user={user} setUser={setUser} />
             )}
+          />
+          <Route
+            path="/recipegenerator"
+            render={(routerProps) => <RecipeGenerator {...routerProps} />}
           />
         </Switch>
       </Layout>
