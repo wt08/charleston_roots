@@ -27,12 +27,12 @@ const RecipeGenerator = () => {
     setSelected([...selected, produceClicked]);
   };
 
-  //   not working!!!
   const handleOnClickUnselect = (produceClicked) => {
-    console.log(produceClicked);
     const index = selected.indexOf(produceClicked);
-    console.log(index);
-    selected.splice(index, 1);
+    // copy of selected to be mutated. Couldn't splice useState selected and return mutated array.
+    let selectedCopy = selected 
+    selectedCopy.splice(index, 1);
+    setSelected(selectedCopy)
   };
 
   return (
