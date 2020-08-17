@@ -9,6 +9,7 @@ import RecipeGenerator from "./components/RecipeGenerator/RecipeGenerator";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ResultsRecipeGenerator from "./components/ResultsRecipeGenerator/ResultsRecipeGenerator";
 import IndividualRecipe from './components/IndividualRecipe/IndividualRecipe'
+import FavRecipes from './components/FavRecipes/FavRecipes'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -17,6 +18,7 @@ function App() {
   // variable to hold selected recipe from Results Recipe Generator
   const [selectedRecipe, setSelectedRecipe] = useState({});
   console.log(selectedRecipe)
+  const [favRecipes, setFavRecipes] = useState([])
 
   return (
     <div className="App">
@@ -62,6 +64,14 @@ function App() {
               <IndividualRecipe
                 {...routerProps}
                 selectedRecipe={selectedRecipe}
+              />
+            )}
+          />
+           <Route
+            path="/favrecipes"
+            render={(routerProps) => (
+              <FavRecipes
+                {...routerProps}
               />
             )}
           />
