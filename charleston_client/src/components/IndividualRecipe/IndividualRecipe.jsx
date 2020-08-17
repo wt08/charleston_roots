@@ -18,7 +18,7 @@ const IndividualRecipe = ({ selectedRecipe }) => {
         />
         <Card.Body>
           <h3>
-            Full recipe found at <a href={selectedRecipe.url} target="_blank">{selectedRecipe.source}</a>
+            Full recipe found at <a href={selectedRecipe.url} target="_blank" rel="noopener noreferrer">{selectedRecipe.source}</a>
           </h3>
           <h3>Ingredients:</h3>
           <ul>

@@ -45,10 +45,22 @@ const ResultsRecipeGenerator = ({
     let format1 = recipeUri.replace(/:/g, "%3A");
     let format2 = format1.replace(/\//g, "%2F");
     let format3 = format2.replace(/#/g, "%23");
-    setFavRecipes([
-      ...favRecipes,
-      format3]);
+    setFavRecipes([...favRecipes, format3]);
   };
+
+  // useEffect(() => {
+  //   axios({
+  //     url: `http://localhost:3000/favorites`,
+  //     method: "POST",
+  //     data: {
+  //       uri:
+  //         "http://www.edamam.com/ontologies/edamam.owl#recipe_6e53ccee356ea429bd1fec75f370cb66",
+  //       user_id: 2,
+  //     },
+  //   })
+  //     .then((res) => console.log(res.data))
+  //     .catch(console.error);
+  // }, []);
 
   return (
     <div>
@@ -72,9 +84,7 @@ const ResultsRecipeGenerator = ({
                         Select
                       </Button>
                       <FontAwesomeIcon
-                        onClick={() =>
-                          handleOnClickFav(recipe.recipe.uri)
-                        }
+                        onClick={() => handleOnClickFav(recipe.recipe.uri)}
                         className="star"
                         icon={faStar}
                       />
