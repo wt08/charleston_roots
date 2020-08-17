@@ -1,3 +1,7 @@
 .resultsList {
-    padding: 100px;
+  padding: 100px;
+}
+
+.star {
+  cursor: pointer;
 }

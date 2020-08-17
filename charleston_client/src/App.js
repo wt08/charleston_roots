@@ -11,6 +11,7 @@ import ResultsRecipeGenerator from "./components/ResultsRecipeGenerator/ResultsR
 import IndividualRecipe from './components/IndividualRecipe/IndividualRecipe'
 import FavRecipes from './components/FavRecipes/FavRecipes'
 
+
 function App() {
   const [user, setUser] = useState(null);
   // variable to hold selected produce from Recipe Generator
@@ -19,6 +20,7 @@ function App() {
   const [selectedRecipe, setSelectedRecipe] = useState({});
   console.log(selectedRecipe)
   const [favRecipes, setFavRecipes] = useState([])
+  console.log(favRecipes)
 
   return (
     <div className="App">
@@ -55,6 +57,8 @@ function App() {
                 selectedProduce={selectedProduce}
                 selectedRecipe={selectedRecipe}
                 setSelectedRecipe={setSelectedRecipe}
+                favRecipes={favRecipes}
+                setFavRecipes={setFavRecipes} 
               />
             )}
           />

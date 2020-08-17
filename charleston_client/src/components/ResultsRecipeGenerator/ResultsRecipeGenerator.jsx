@@ -5,8 +5,16 @@ import Button from "react-bootstrap/Button";
 import CardColumns from "react-bootstrap/CardColumns";
 import "./ResultsRecipeGenerator.css";
 import { Redirect } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
 
-const ResultsRecipeGenerator = ({ selectedProduce, selectedRecipe, setSelectedRecipe }) => {
+const ResultsRecipeGenerator = ({
+  selectedProduce,
+  selectedRecipe,
+  setSelectedRecipe,
+  favRecipes,
+  setFavRecipes,
+}) => {
   const recipe_api_id = process.env.REACT_APP_edamam_recipe_api_id;
   const recipe_api_key = process.env.REACT_APP_edamam_recipe_api_key;
   const [recipes, setRecipes] = useState([]);
@@ -32,6 +40,16 @@ const ResultsRecipeGenerator = ({ selectedProduce, selectedRecipe, setSelectedRe
     setSelectedRecipe(recipe.recipe);
   };
 
+  const handleOnClickFav = (recipeUri) => {
+    // reformat Uri using regex to make it edamam API searchable
+    let format1 = recipeUri.replace(/:/g, "%3A");
+    let format2 = format1.replace(/\//g, "%2F");
+    let format3 = format2.replace(/#/g, "%23");
+    setFavRecipes([
+      ...favRecipes,
+      format3]);
+  };
+
   return (
     <div>
       <h1>Recipe Generator</h1>
@@ -53,6 +71,13 @@ const ResultsRecipeGenerator = ({ selectedProduce, selectedRecipe, setSelectedRe
                       <Button onClick={() => handleOnClickSelect(recipe)}>
                         Select
                       </Button>
+                      <FontAwesomeIcon
+                        onClick={() =>
+                          handleOnClickFav(recipe.recipe.uri)
+                        }
+                        className="star"
+                        icon={faStar}
+                      />
                     </Card.Body>
                   </Card>
                 );
@@ -60,12 +85,10 @@ const ResultsRecipeGenerator = ({ selectedProduce, selectedRecipe, setSelectedRe
             : null}
         </CardColumns>
       </div>
-{/* if selectedRecipe has content, go to IndividualRecipe for that recipe */}
+      {/* if selectedRecipe has content, go to IndividualRecipe for that recipe */}
       {selectedRecipe.label ? <Redirect to="/individualRecipe" /> : null}
     </div>
   );
 };
 
 export default ResultsRecipeGenerator;
-
-
