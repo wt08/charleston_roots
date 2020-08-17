@@ -6,29 +6,13 @@ import { Route, Switch } from "react-router-dom";
 import Login from "./components/Login/Login";
 import AccountSettings from "./components/AccountSettings/AccountSettings";
 import RecipeGenerator from "./components/RecipeGenerator/RecipeGenerator";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import ResultsRecipeGenerator from "./components/ResultsRecipeGenerator/ResultsRecipeGenerator";
 
 function App() {
-
-  // const recipe_api_id = process.env.REACT_APP_edamam_recipe_api_id;
-  // const recipe_api_key = process.env.REACT_APP_edamam_recipe_api_key;
-
-  // useEffect(() => {
-    //     const makeAPICall = () => {
-    //       axios
-    //         .get(
-    //           `https://api.edamam.com/search?q=chicken&app_id=${recipe_api_id}&app_key=${recipe_api_key}`
-    //         )
-    //         .then((res) => {
-    //           const data = res.data;
-    //           console.log(data);
-    //         })
-    //         .catch(console.error);
-    //     };
-    //     makeAPICall();
-    //   }, []);
-
   const [user, setUser] = useState(null);
+  // variable to hold selected produce for Recipe Generator
+  const [selected, setSelected] = useState([]);
 
   return (
     <div className="App">
@@ -49,7 +33,22 @@ function App() {
           />
           <Route
             path="/recipegenerator"
-            render={(routerProps) => <RecipeGenerator {...routerProps} />}
+            render={(routerProps) => (
+              <RecipeGenerator
+                {...routerProps}
+                selected={selected}
+                setSelected={setSelected}
+              />
+            )}
+          />
+          <Route
+            path="/resultsrecipegenerator"
+            render={(routerProps) => (
+              <ResultsRecipeGenerator
+                {...routerProps}
+                selected={selected}
+              />
+            )}
           />
         </Switch>
       </Layout>

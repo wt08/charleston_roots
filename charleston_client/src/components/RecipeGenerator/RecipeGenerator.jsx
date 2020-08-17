@@ -4,12 +4,11 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardColumns from "react-bootstrap/CardColumns";
 import "./RecipeGenerator.css";
+import { Link } from "react-router-dom";
 
-const RecipeGenerator = () => {
+const RecipeGenerator = ( {selected, setSelected} ) => {
   const [produce, setProduce] = useState(null);
-  const [selected, setSelected] = useState([]);
   console.log(selected);
-  const [showSelect, setShowSelect] = useState(true)
 
   useEffect(() => {
     const makeAPICall = () => {
@@ -39,7 +38,13 @@ const RecipeGenerator = () => {
   return (
     <div>
       <h1>Recipe Generator</h1>
-      <h4>Choose up to 4 and then click Find Recipes</h4>
+      <h4>Choose produce then click Find Recipes to see what you can make</h4>
+      <h5>Produce Chosen:</h5>
+  {selected[0] ? <p>{selected[0]}</p> : null}
+  {selected[1] ? <p>{selected[1]}</p> : null}
+  {selected[2] ? <p>{selected[2]}</p> : null}
+  {selected[3] ? <p>{selected[3]}</p> : null}
+   <Link to={"/resultsrecipegenerator"}><Button>Find Recipes</Button></Link> 
       <div className="produceList">
         <CardColumns>
           {produce
@@ -53,22 +58,21 @@ const RecipeGenerator = () => {
                     />
                     <Card.Body>
                       <Card.Title>{produce.name}</Card.Title>
-
-                      <Button
-                        className={showSelect ? null : "hideSelect"}
-                        onClick={() => handleOnClickUnselect(produce.name)}
-                        variant="primary"
-                      >
-                        Unselect
-                      </Button>
-
-                      <Button
-                      className={showSelect ? "hideUnselect" : null }
-                        onClick={() => handleOnClickSelect(produce.name)}
-                        variant="primary"
-                      >
-                        Select
-                      </Button>
+                      {selected.includes(produce.name) ? (
+                        <Button
+                          onClick={() => handleOnClickUnselect(produce.name)}
+                          variant="primary"
+                        >
+                          Unselect
+                        </Button>
+                      ) : (
+                        <Button
+                          onClick={() => handleOnClickSelect(produce.name)}
+                          variant="primary"
+                        >
+                          Select
+                        </Button>
+                      )}
                     </Card.Body>
                   </Card>
                 );
@@ -81,5 +85,3 @@ const RecipeGenerator = () => {
 };
 
 export default RecipeGenerator;
-
-// ("https://api.edamam.com/api/food-database/v2/parser?ingr=red%20apple&app_id=21fd5cef&app_key=8e8a1cd5bc1665401713d3f285622dc6");

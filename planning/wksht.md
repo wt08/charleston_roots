@@ -204,6 +204,8 @@ POSTMVP:
 
 ## Bugs/Improvements
 
+Ask madeline if bad practice to not put all routes in App.js
+Fix select/unselect buttons and produce chosen list
 Fix that even when new user is unique, isTaken alert still pops up!  
 keep user logged in, even during page refresh  
 Break up map into separate components for readability
