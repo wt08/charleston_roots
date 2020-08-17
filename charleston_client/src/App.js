@@ -11,8 +11,11 @@ import ResultsRecipeGenerator from "./components/ResultsRecipeGenerator/ResultsR
 
 function App() {
   const [user, setUser] = useState(null);
-  // variable to hold selected produce for Recipe Generator
-  const [selected, setSelected] = useState([]);
+  // variable to hold selected produce from Recipe Generator
+  const [selectedProduce, setSelectedProduce] = useState([]);
+  // variable to hold selected recipe from Results Recipe Generator
+  const [selectedRecipe, setSelectedRecipe] = useState({});
+  console.log(selectedRecipe)
 
   return (
     <div className="App">
@@ -36,8 +39,8 @@ function App() {
             render={(routerProps) => (
               <RecipeGenerator
                 {...routerProps}
-                selected={selected}
-                setSelected={setSelected}
+                selectedProduce={selectedProduce}
+                setSelectedProduce={setSelectedProduce}
               />
             )}
           />
@@ -46,7 +49,9 @@ function App() {
             render={(routerProps) => (
               <ResultsRecipeGenerator
                 {...routerProps}
-                selected={selected}
+                selectedProduce={selectedProduce}
+                selectedRecipe={selectedRecipe}
+                setSelectedRecipe={setSelectedRecipe}
               />
             )}
           />

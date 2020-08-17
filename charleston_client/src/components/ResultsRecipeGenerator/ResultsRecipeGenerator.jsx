@@ -3,18 +3,22 @@ import axios from "axios";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardColumns from "react-bootstrap/CardColumns";
+import "./ResultsRecipeGenerator.css";
 
-const ResultsRecipeGenerator = ({ selected }) => {
+const ResultsRecipeGenerator = ({
+  selectedProduce,
+  setSelectedRecipe,
+}) => {
   const recipe_api_id = process.env.REACT_APP_edamam_recipe_api_id;
   const recipe_api_key = process.env.REACT_APP_edamam_recipe_api_key;
   const [recipes, setRecipes] = useState([]);
-  console.log(recipes)
+  console.log(recipes);
 
   useEffect(() => {
     const makeAPICall = () => {
       axios
         .get(
-          `https://api.edamam.com/search?q=${selected}&app_id=${recipe_api_id}&app_key=${recipe_api_key}`
+          `https://api.edamam.com/search?q=${selectedProduce}&app_id=${recipe_api_id}&app_key=${recipe_api_key}`
         )
         .then((res) => {
           const data = res.data;
@@ -25,26 +29,38 @@ const ResultsRecipeGenerator = ({ selected }) => {
     makeAPICall();
   }, []);
 
+  const handleOnClickSelect = (recipe) => {
+    setSelectedRecipe(recipe);
+  };
+
   return (
     <div>
       <h1>Recipe Generator</h1>
       <h4>Results:</h4>
-      <CardColumns>
-      {recipes[0]
-        ? recipes.map((recipe) => {
-            return (
-              <Card>
-                  {/*                       API data has nested recipe object  */}
-                <Card.Img variant="top" src={recipe.recipe.image} alt={recipe.recipe.label} />
-                <Card.Body>
-                  <Card.Title>{recipe.recipe.label}</Card.Title>
-                  <Button>Select</Button>
-                </Card.Body>
-              </Card>
-            );
-          })
-        : null}
+      <div className="resultsList">
+        <CardColumns>
+          {recipes[0]
+            ? recipes.map((recipe) => {
+                return (
+                  <Card>
+                    {/* API data has nested recipe object  */}
+                    <Card.Img
+                      variant="top"
+                      src={recipe.recipe.image}
+                      alt={recipe.recipe.label}
+                    />
+                    <Card.Body>
+                      <Card.Title>{recipe.recipe.label}</Card.Title>
+                      <Button onClick={() => handleOnClickSelect(recipe)}>
+                        Select
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                );
+              })
+            : null}
         </CardColumns>
+      </div>
     </div>
   );
 };

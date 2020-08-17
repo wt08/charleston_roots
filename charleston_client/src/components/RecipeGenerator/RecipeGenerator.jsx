@@ -6,9 +6,9 @@ import CardColumns from "react-bootstrap/CardColumns";
 import "./RecipeGenerator.css";
 import { Link } from "react-router-dom";
 
-const RecipeGenerator = ( {selected, setSelected} ) => {
+const RecipeGenerator = ( {selectedProduce, setSelectedProduce} ) => {
   const [produce, setProduce] = useState(null);
-  console.log(selected);
+  console.log(selectedProduce);
 
   useEffect(() => {
     const makeAPICall = () => {
@@ -24,15 +24,15 @@ const RecipeGenerator = ( {selected, setSelected} ) => {
   }, []);
 
   const handleOnClickSelect = (produceClicked) => {
-    setSelected([...selected, produceClicked]);
+    setSelectedProduce([...selectedProduce, produceClicked]);
   };
 
   const handleOnClickUnselect = (produceClicked) => {
-    const index = selected.indexOf(produceClicked);
-    // copy of selected to be mutated. Couldn't splice useState selected and return mutated array.
-    let selectedCopy = selected;
+    const index = selectedProduce.indexOf(produceClicked);
+    // copy of selectedProduce to be mutated. Couldn't splice useState selectedProduce and return mutated array.
+    let selectedCopy = selectedProduce;
     selectedCopy.splice(index, 1);
-    setSelected(selectedCopy);
+    setSelectedProduce(selectedCopy);
   };
 
   return (
@@ -40,10 +40,10 @@ const RecipeGenerator = ( {selected, setSelected} ) => {
       <h1>Recipe Generator</h1>
       <h4>Choose produce then click Find Recipes to see what you can make</h4>
       <h5>Produce Chosen:</h5>
-  {selected[0] ? <p>{selected[0]}</p> : null}
-  {selected[1] ? <p>{selected[1]}</p> : null}
-  {selected[2] ? <p>{selected[2]}</p> : null}
-  {selected[3] ? <p>{selected[3]}</p> : null}
+  {selectedProduce[0] ? <p>{selectedProduce[0]}</p> : null}
+  {selectedProduce[1] ? <p>{selectedProduce[1]}</p> : null}
+  {selectedProduce[2] ? <p>{selectedProduce[2]}</p> : null}
+  {selectedProduce[3] ? <p>{selectedProduce[3]}</p> : null}
    <Link to={"/resultsrecipegenerator"}><Button>Find Recipes</Button></Link> 
       <div className="produceList">
         <CardColumns>
@@ -58,7 +58,7 @@ const RecipeGenerator = ( {selected, setSelected} ) => {
                     />
                     <Card.Body>
                       <Card.Title>{produce.name}</Card.Title>
-                      {selected.includes(produce.name) ? (
+                      {selectedProduce.includes(produce.name) ? (
                         <Button
                           onClick={() => handleOnClickUnselect(produce.name)}
                           variant="primary"
