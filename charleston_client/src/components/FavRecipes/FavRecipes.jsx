@@ -5,52 +5,72 @@ import Button from "react-bootstrap/Button";
 import CardColumns from "react-bootstrap/CardColumns";
 
 const FavRecipes = ({ user }) => {
-  const [favs, setFavs] = useState(null);
-  console.log(favs);
-  const [singleFav, setSingleFav] = useState(null);
-  console.log(singleFav);
+  // favs uri stored in custom backend
+  const [userData, setUserData] = useState(null);
+  console.log("userData -", userData);
 
-  useEffect(() => {
+  //   favs data from edamam API
+  const [fullFavsData, setFullFavsData] = useState(null);
+  console.log("fullFavsData-", fullFavsData);
+
+  const reformatFavUris = (uris) => {
+    let holder = [];
+    for (let i = 0; i < uris.length; i++) {
+      holder.push(`r=${uris[i].uri}&`);
+    }
+    return holder.join("");
+  };
+
+  const getFullRecipeData = (data) => {
+    console.log("getFullRecipeData starting");
+    axios
+      .get(
+        //   cors-anywhere is proxy server to get around CORS error
+        `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?${reformatFavUris(
+          data.favorites
+        )}app_id=ef0f5e53&app_key=7a7046aac89468a188ddfff0efbb3812`
+      )
+      .then((res) => {
+        setFullFavsData(res.data);
+      })
+      .catch(console.error);
+  };
+
+  const getUserData = () => {
     axios
       .get(`https://srced-chs.herokuapp.com/users/${user.id}`)
-      .then((res) => setFavs(res.data.favorites))
+      .then((res) => getFullRecipeData(res.data))
       .catch(console.error);
+  };
+
+  useEffect(() => {
+    getUserData();
   }, []);
-
- if(favs) { const eachFav = () => {
-    favs.map((fav) => {
-      axios
-        .get(
-          `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?r=${fav.uri}&app_id=ef0f5e53&app_key=7a7046aac89468a188ddfff0efbb3812`
-        )
-        .then((res) => {
-          setSingleFav(res.data);
-        })
-        .then(() => {
-          return (
-            <Card>
-              <Card.Img
-                variant="top"
-                src={singleFav[0].image}
-                alt={singleFav[0].label}
-              />
-              <Card.Body>
-                <Card.Title>{singleFav[0].label}</Card.Title>
-              </Card.Body>
-            </Card>
-          );
-        })
-        .catch(console.error);
-    });
-  } 
-  console.log(eachFav())
-}
-
-  
 
   return (
     <div>
-      <p>Hello</p>
+      <CardColumns>
+        {fullFavsData
+          ? fullFavsData.map((fav) => {
+              return (
+                <Card>
+                  <Card.Img variant="top" src={fav.image} alt={fav.label} />
+                  <Card.Body>
+                    <Card.Title>{fav.label}</Card.Title>
+                    {/* <Button onClick={() => handleOnClickSelect(recipe)}>
+                Select
+              </Button>
+              <FontAwesomeIcon
+                onClick={() => handleOnClickFav(recipe.recipe.uri)}
+                className="star"
+                icon={faStar}
+              /> */}
+                  </Card.Body>
+                </Card>
+              );
+            })
+          : null}
+      </CardColumns>
     </div>
   );
 };

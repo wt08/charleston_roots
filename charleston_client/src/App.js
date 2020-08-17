@@ -18,7 +18,6 @@ function App() {
   const [selectedProduce, setSelectedProduce] = useState([]);
   // variable to hold selected recipe from Results Recipe Generator
   const [selectedRecipe, setSelectedRecipe] = useState({});
-  console.log(selectedRecipe)
 
   return (
     <div className="App">

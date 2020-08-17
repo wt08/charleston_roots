@@ -6,22 +6,6 @@ import {Link} from 'react-router-dom'
 
 const Homepage = () => {
   const [markets, setMarkets] = useState(null);
-  console.log(markets);
-
-  //   if (markets)
-  //   {
-  //       const eachMarket = markets.map(market => {
-  //           return (
-  //         {
-  //             name: market.name,
-  //             address: market.address,
-  //             exits: market.exits,
-  //             coordinates: [market.long, market.lat]
-  //         }
-  //           )
-  //   })
-  //   console.log(eachMarket)
-  // }
 
   useEffect(() => {
     const makeAPICall = () => {
