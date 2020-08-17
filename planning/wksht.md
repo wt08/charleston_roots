@@ -123,17 +123,17 @@ create account_settings page that displays username, email, and ability to delet
 style
 
 RECIPE GENERATOR  
-Create produce model and seed data  
-Create get route  
-display all produce on page  
+Create produce model and seed data x  
+Make get route only  
+display all produce on page x
 add filters and serch by name  
-add handleonclick to produce div that stores name in useState
-add get recipe button that links to results page  
+add handleonclick to produce div that stores name in useState x
+add get recipe button that links to results page x  
 style
 
 RECIPE GENERATOR RESULTS
-use produce stored in usestate to call Edamam recipe API using produce as queries  
-display recipe API results on page  
+use produce stored in usestate to call Edamam recipe API using produce as queries x  
+display recipe API results on page x  
 create favorite model  
 add favorite star to recipe div  
 add handeonlclick to star so that recipe is added to faves model  
@@ -141,7 +141,7 @@ add back button that takes you back to recipe generator w/ previously selected i
 style
 
 INDIVIDUAL RECIPE  
-display recipe name, image, ingredients, and linke to recipe based on variable passed to it  
+display recipe name, image, ingredients, and linke to recipe based on variable passed to it x  
 style
 
 FAVE RECIPES  
@@ -166,8 +166,8 @@ Extra styling/effects
 | Day 3 (Thurs) | Rest of homepage                                            | Complete   |
 | Day 4 (Fri)   | Partial user account                                        | Complete   |
 | Day 5 (Sat)   | Rest of user account, backend deploy                        | Complete   |
-| Day 5 (Sun)   | Deploy frontend, Recipe Generator                           | Incomplete |
-| Day 5 (Mon)   | Recipe Generator Results/Individual/Fave Recipe             | Incomplete |
+| Day 5 (Sun)   | Recipe Generator/Recipe Generator Results/Individual        | Complete   |
+| Day 5 (Mon)   | Fave Recipe/Deploy frontend                                 | Incomplete |
 | Day 5 (Tues)  | Final Touches                                               | Incomplete |
 
 ## Time Frames
@@ -190,9 +190,16 @@ MVP:
 | create get, post, and delete routes | H | 1hrs | .5hrs | hrs |
 | create Login page w/ API call | H | 3hrs | 2.5hrs | hrs |
 | manipulate loginbutton upon login | H | 1hrs | 2.5hrs | hrs |
-| create account*settings page | H | 2hrs | 1hrs | hrs |
+| create account settings page | H | 2hrs | 1hrs | hrs |
 | deploy backend | H | 1hrs | 1hrs | hrs |
-| deploy frontend | H | 1hrs | 1hrs | hrs | \_STILL NEED TO DO THIS*
+| create produce model/seed data | H | 1hrs | 1hrs | hrs |
+| display all produce on Recipe Generator comp | H | 1hrs | .5hrs | hrs |
+| recipe generator handleonclick | H | 1hrs | 1.5hrs | hrs |
+| link get recipe button | H | 1hrs | .5hrs | hrs |
+| call Edama food API on results recipe generator comp | H | 1hrs | .5hrs | hrs |
+| call Edama food API on results recipe generator comp | H | 1hrs | 1hrs | hrs |
+| individual recipe comp | H | 1hrs | .5hrs | hrs |
+
 | Total | H | hrs | -hrs | hrs |
 
 POSTMVP:  
@@ -204,6 +211,7 @@ POSTMVP:
 
 ## Bugs/Improvements
 
+Make produce routes Get only
 Ask madeline if bad practice to not put all routes in App.js
 Fix select/unselect buttons and produce chosen list
 Fix that even when new user is unique, isTaken alert still pops up!  
