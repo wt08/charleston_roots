@@ -12,7 +12,9 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
       <Link to={"/recipegenerator"}>
         <h4>Recipe Generator</h4>
       </Link>
-      <h4>Favorite Recipes</h4>
+      <Link to={"/favrecipes"}>
+        <h4>Favorite Recipes</h4>
+      </Link>
     </div>
   );
 };

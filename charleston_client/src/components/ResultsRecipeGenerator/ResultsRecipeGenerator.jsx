@@ -9,16 +9,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 
 const ResultsRecipeGenerator = ({
+  user,
   selectedProduce,
   selectedRecipe,
   setSelectedRecipe,
-  favRecipes,
-  setFavRecipes,
 }) => {
   const recipe_api_id = process.env.REACT_APP_edamam_recipe_api_id;
   const recipe_api_key = process.env.REACT_APP_edamam_recipe_api_key;
   const [recipes, setRecipes] = useState([]);
   console.log(recipes);
+  const [favRecipe, setFavRecipe] = useState("");
+  console.log("fav recipe - ", favRecipe);
 
   useEffect(() => {
     const makeAPICall = () => {
@@ -40,27 +41,24 @@ const ResultsRecipeGenerator = ({
     setSelectedRecipe(recipe.recipe);
   };
 
-  const handleOnClickFav = (recipeUri) => {
+  // *** WORK ON THIS ******
+  const handleOnClickFav = async (recipeUri) => {
     // reformat Uri using regex to make it edamam API searchable
     let format1 = recipeUri.replace(/:/g, "%3A");
     let format2 = format1.replace(/\//g, "%2F");
     let format3 = format2.replace(/#/g, "%23");
-    setFavRecipes([...favRecipes, format3]);
+    await setFavRecipe(format3);
+    // axios({
+    //   url: `http://srced-chs.herokuapp.com/users/${user.id}/favorites`,
+    //   method: "POST",
+    //   data: {
+    //     uri: favRecipe,
+    //     user_id: user.id,
+    //   },
+    // })
+    //   .then(console.log('Success'))
+    //   .catch(console.error);
   };
-
-  // useEffect(() => {
-  //   axios({
-  //     url: `http://localhost:3000/favorites`,
-  //     method: "POST",
-  //     data: {
-  //       uri:
-  //         "http://www.edamam.com/ontologies/edamam.owl#recipe_6e53ccee356ea429bd1fec75f370cb66",
-  //       user_id: 2,
-  //     },
-  //   })
-  //     .then((res) => console.log(res.data))
-  //     .catch(console.error);
-  // }, []);
 
   return (
     <div>

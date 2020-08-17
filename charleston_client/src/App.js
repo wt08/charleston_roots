@@ -19,8 +19,6 @@ function App() {
   // variable to hold selected recipe from Results Recipe Generator
   const [selectedRecipe, setSelectedRecipe] = useState({});
   console.log(selectedRecipe)
-  const [favRecipes, setFavRecipes] = useState([])
-  console.log(favRecipes)
 
   return (
     <div className="App">
@@ -54,11 +52,10 @@ function App() {
             render={(routerProps) => (
               <ResultsRecipeGenerator
                 {...routerProps}
+                user={user}
                 selectedProduce={selectedProduce}
                 selectedRecipe={selectedRecipe}
                 setSelectedRecipe={setSelectedRecipe}
-                favRecipes={favRecipes}
-                setFavRecipes={setFavRecipes} 
               />
             )}
           />
@@ -76,6 +73,7 @@ function App() {
             render={(routerProps) => (
               <FavRecipes
                 {...routerProps}
+                user={user}
               />
             )}
           />
