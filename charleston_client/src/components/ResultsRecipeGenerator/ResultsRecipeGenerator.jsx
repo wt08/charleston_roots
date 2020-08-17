@@ -4,11 +4,9 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardColumns from "react-bootstrap/CardColumns";
 import "./ResultsRecipeGenerator.css";
+import { Redirect } from "react-router-dom";
 
-const ResultsRecipeGenerator = ({
-  selectedProduce,
-  setSelectedRecipe,
-}) => {
+const ResultsRecipeGenerator = ({ selectedProduce, selectedRecipe, setSelectedRecipe }) => {
   const recipe_api_id = process.env.REACT_APP_edamam_recipe_api_id;
   const recipe_api_key = process.env.REACT_APP_edamam_recipe_api_key;
   const [recipes, setRecipes] = useState([]);
@@ -30,7 +28,8 @@ const ResultsRecipeGenerator = ({
   }, []);
 
   const handleOnClickSelect = (recipe) => {
-    setSelectedRecipe(recipe);
+    //   API has nested recipe object
+    setSelectedRecipe(recipe.recipe);
   };
 
   return (
@@ -61,6 +60,8 @@ const ResultsRecipeGenerator = ({
             : null}
         </CardColumns>
       </div>
+{/* if selectedRecipe has content, go to IndividualRecipe for that recipe */}
+      {selectedRecipe.label ? <Redirect to="/individualRecipe" /> : null}
     </div>
   );
 };

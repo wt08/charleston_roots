@@ -8,6 +8,7 @@ import AccountSettings from "./components/AccountSettings/AccountSettings";
 import RecipeGenerator from "./components/RecipeGenerator/RecipeGenerator";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ResultsRecipeGenerator from "./components/ResultsRecipeGenerator/ResultsRecipeGenerator";
+import IndividualRecipe from './components/IndividualRecipe/IndividualRecipe'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -52,6 +53,15 @@ function App() {
                 selectedProduce={selectedProduce}
                 selectedRecipe={selectedRecipe}
                 setSelectedRecipe={setSelectedRecipe}
+              />
+            )}
+          />
+            <Route
+            path="/individualrecipe"
+            render={(routerProps) => (
+              <IndividualRecipe
+                {...routerProps}
+                selectedRecipe={selectedRecipe}
               />
             )}
           />
