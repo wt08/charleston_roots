@@ -17,9 +17,6 @@ const ResultsRecipeGenerator = ({
   const recipe_api_id = process.env.REACT_APP_edamam_recipe_api_id;
   const recipe_api_key = process.env.REACT_APP_edamam_recipe_api_key;
   const [recipes, setRecipes] = useState([]);
-  console.log(recipes);
-  const [favRecipe, setFavRecipe] = useState("");
-  console.log("fav recipe - ", favRecipe);
 
   useEffect(() => {
     const makeAPICall = () => {
@@ -41,31 +38,36 @@ const ResultsRecipeGenerator = ({
     setSelectedRecipe(recipe.recipe);
   };
 
-  // *** WORK ON THIS ******
+  
   const handleOnClickFav = async (recipeUri) => {
     // reformat Uri using regex to make it edamam API searchable
-    let format1 = recipeUri.replace(/:/g, "%3A");
-    let format2 = format1.replace(/\//g, "%2F");
-    let format3 = format2.replace(/#/g, "%23");
-    await setFavRecipe(format3);
-    // axios({
-    //   url: `http://srced-chs.herokuapp.com/users/${user.id}/favorites`,
-    //   method: "POST",
-    //   data: {
-    //     uri: favRecipe,
-    //     user_id: user.id,
-    //   },
-    // })
-    //   .then(console.log('Success'))
-    //   .catch(console.error);
+      let format1 = recipeUri.replace(/:/g, "%3A");
+      let format2 = format1.replace(/\//g, "%2F");
+      let format3 = format2.replace(/#/g, "%23");
+
+    const makeAPICall = (favUri) => {
+      console.log("API call starting")
+      axios({
+        url: `http://srced-chs.herokuapp.com/users/${user.id}/favorites`,
+        method: "POST",
+        data: {
+          uri: favUri,
+          user_id: user.id,
+        },
+      })
+        .then(console.log("Success"))
+        .catch(console.error);
+    };
+    
+    makeAPICall(format3)
   };
 
   return (
     <div className="resultsRecGen">
-      <br/>
-      <br/>
+      <br />
+      <br />
       <h1>Recipe Generator</h1>
-      <br/>
+      <br />
       <h4>Results:</h4>
       <div className="resultsList">
         <CardColumns>
@@ -80,8 +82,13 @@ const ResultsRecipeGenerator = ({
                       alt={recipe.recipe.label}
                     />
                     <Card.Body>
-                      <Card.Title className="cardTitle">{recipe.recipe.label}</Card.Title>
-                      <Button className="resultsButton" onClick={() => handleOnClickSelect(recipe)}>
+                      <Card.Title className="cardTitle">
+                        {recipe.recipe.label}
+                      </Card.Title>
+                      <Button
+                        className="resultsButton"
+                        onClick={() => handleOnClickSelect(recipe)}
+                      >
                         Select
                       </Button>
                       <FontAwesomeIcon
