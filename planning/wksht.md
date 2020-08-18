@@ -134,9 +134,9 @@ style
 RECIPE GENERATOR RESULTS
 use produce stored in usestate to call Edamam recipe API using produce as queries x  
 display recipe API results on page x  
-create favorite model  
-add favorite star to recipe div  
-add handeonlclick to star so that recipe is added to faves model  
+create favorite model x  
+add favorite star to recipe div x  
+add handeonlclick to star so that recipe is added to faves model x  
 add back button that takes you back to recipe generator w/ previously selected items  
 style
 
@@ -145,8 +145,8 @@ display recipe name, image, ingredients, and linke to recipe based on variable p
 style
 
 FAVE RECIPES  
-display all recipes based on user who is logged in
-use edamam_uri in fav model top make edama API to get recipe data  
+display all recipes based on user who is logged in x  
+use edamam_uri in fav model top make edama API to get recipe data x  
 style
 
 LINKING/ROUTING  
@@ -167,8 +167,8 @@ Extra styling/effects
 | Day 4 (Fri)   | Partial user account                                        | Complete   |
 | Day 5 (Sat)   | Rest of user account, backend deploy                        | Complete   |
 | Day 5 (Sun)   | Recipe Generator/Recipe Generator Results/Individual        | Complete   |
-| Day 5 (Mon)   | Fave Recipe/Deploy frontend                                 | Incomplete |
-| Day 5 (Tues)  | Final Touches                                               | Incomplete |
+| Day 5 (Mon)   | Fave Recipe                                                 | Complete   |
+| Day 5 (Tues)  | Deploy frontend, Final Touches                              | Incomplete |
 
 ## Time Frames
 
@@ -199,7 +199,15 @@ MVP:
 | call Edama food API on results recipe generator comp | H | 1hrs | .5hrs | hrs |
 | call Edama food API on results recipe generator comp | H | 1hrs | 1hrs | hrs |
 | individual recipe comp | H | 1hrs | .5hrs | hrs |
-
+| create favorite model | H | 1hrs | 3hrs | hrs |
+| add handeonlclick to star| H | 2hrs | 3hrs | hrs |
+| fav recipe comp | H | 3hrs | 3hrs | hrs |
+| styling | H | 3hrs | hrs | hrs |
+| deploy front | H | 2hrs | hrs | hrs |
+| troubleshoot handleonclick star | H | 2hrs | hrs | hrs |
+| fix select/unselect produce buttons | H | 1hrs | hrs | hrs |
+| restrict routes | H | .5hrs | hrs | hrs |
+| add filters to recipe gen | H | 1.5hrs | hrs | hrs |
 | Total | H | hrs | -hrs | hrs |
 
 POSTMVP:  
@@ -212,11 +220,9 @@ POSTMVP:
 ## Bugs/Improvements
 
 Make produce routes Get only
-Ask madeline if bad practice to not put all routes in App.js
 Fix select/unselect buttons and produce chosen list
 Fix that even when new user is unique, isTaken alert still pops up!  
-keep user logged in, even during page refresh  
-Break up map into separate components for readability
+keep user logged in, even during page refresh
 
 ## Additional Libraries
 
