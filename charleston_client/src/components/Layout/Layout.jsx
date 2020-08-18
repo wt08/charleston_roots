@@ -11,7 +11,7 @@ const Layout = (props) => {
       <Nav />
       {props.user ? (
         <Link to={"/accountsettings"}>
-          <button className="account">{props.user.username}</button>
+          <Button variant="light" className="account">{props.user.username}</Button>
         </Link>
       ) : (
         <Link to={"/login"}>

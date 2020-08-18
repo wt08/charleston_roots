@@ -1,0 +1,11 @@
+.loginComp {
+    margin-top: 50px;
+    height: 100vh;
+    background-color: #13293D;
+  color: #1B98E0;
+  font-family: "Alata", sans-serif;
+}
+
+.input {
+    margin: 5px;
+}

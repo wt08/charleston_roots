@@ -8,4 +8,6 @@
 .account {
   position: absolute;
   right: 15px;
+  font-family: "Alata", sans-serif;
+  margin-top: 10px;
 }

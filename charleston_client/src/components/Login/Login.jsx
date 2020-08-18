@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import "./Login.css"
+import Button from "react-bootstrap/Button";
 
 const Login = ({ setUser }) => {
   const [existingUserInput, setExistingUserInput] = useState({
@@ -57,10 +59,11 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <div>
+    <div className="loginComp">
       <h3>Login</h3>
       <form onSubmit={handleSubmitExistingUser}>
         <input
+        className="input"
           placeholder="Add your email"
           value={existingUserInput.email}
           name="email"
@@ -68,13 +71,14 @@ const Login = ({ setUser }) => {
           required
         />
         <input
+        className="input"
           placeholder="Username"
           value={existingUserInput.username}
           name="username"
           onChange={handleChangeExistingUser}
           required
         />
-        <button type="submit">Login</button>
+        <Button type="submit">Login</Button>
         {isInvalidUser ? <p>Invalid username</p> : null}
       </form>
 
@@ -86,6 +90,7 @@ const Login = ({ setUser }) => {
       <h3>Create Account</h3>
       <form onSubmit={handleSubmitNewUser}>
         <input
+        className="input"
           placeholder="Add your email"
           value={newUserInput.email}
           name="email"
@@ -93,13 +98,14 @@ const Login = ({ setUser }) => {
           required
         />
         <input
+        className="input"
           placeholder="Create a username"
           value={newUserInput.username}
           name="username"
           onChange={handleChangeNewUser}
           required
         />
-        <button type="submit">Create Account</button>
+        <Button type="submit">Create Account</Button>
         {isTakenUser ? <p>Username taken. Please try another.</p> : null}
       </form>
       {isLoggedIn ? <Redirect to="/" /> : null}
