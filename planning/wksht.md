@@ -168,7 +168,7 @@ Extra styling/effects
 | Day 5 (Sat)   | Rest of user account, backend deploy                        | Complete   |
 | Day 5 (Sun)   | Recipe Generator/Recipe Generator Results/Individual        | Complete   |
 | Day 5 (Mon)   | Fave Recipe                                                 | Complete   |
-| Day 5 (Tues)  | Deploy frontend, Final Touches                              | Incomplete |
+| Day 5 (Tues)  | Deploy frontend, Style, Final Touches                       | Incomplete |
 
 ## Time Frames
 
@@ -202,7 +202,7 @@ MVP:
 | create favorite model | H | 1hrs | 3hrs | hrs |
 | add handeonlclick to star| H | 2hrs | 3hrs | hrs |
 | fav recipe comp | H | 3hrs | 3hrs | hrs |
-| styling | H | 3hrs | hrs | hrs |
+| styling | H | 3hrs | hrs 9:00 - | hrs |
 | deploy front | H | 2hrs | hrs | hrs |
 | troubleshoot handleonclick star | H | 2hrs | hrs | hrs |
 | fix select/unselect produce buttons | H | 1hrs | hrs | hrs |

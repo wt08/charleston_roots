@@ -1,0 +1,30 @@
+.homepage h1 {
+  color: #e8f1f2;
+  font-family: "Alata", sans-serif;
+}
+
+.homepage h4 {
+  color: #e8f1f2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  text-align: left;
+}
+
+.homepage span {
+  font-style: italic;
+}
+
+.recipeGenLink {
+  color: #1b98e0;
+}
+
+.homepageInfo {
+  padding: 15px;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .homepage h4 {
+        text-align: center;
+    }
+}

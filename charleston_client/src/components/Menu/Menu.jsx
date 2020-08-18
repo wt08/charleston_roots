@@ -1,11 +1,13 @@
 import React from "react";
 import "./Menu.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Menu = ({ menuOpen, setMenuOpen }) => {
   return (
     <div className={`menu ${menuOpen ? "show" : ""}`}>
-      <p onClick={() => setMenuOpen(!menuOpen)}>x</p>
+      <p onClick={() => setMenuOpen(!menuOpen)}><FontAwesomeIcon icon={faTimes}/></p>
       <Link to={"/"}>
         <h4>Home</h4>
       </Link>

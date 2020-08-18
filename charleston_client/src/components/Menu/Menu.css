@@ -1,16 +1,26 @@
 .menu {
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
+  background-color: #E8F1F2;
   text-align: left;
   padding: 5px;
   cursor: pointer;
-  transform: translateX(-100%);
+  transform: translateX(-120%);
   transition: transform 0.5s ease-in-out;
   position: absolute;
-  width: 100vw;
+  width: 90vw;
   height: 100vh;
   z-index: 1000000;
+}
+
+.menu p {
+  font-size: 25px;
+  padding: 10px;
+}
+
+.menu h4 {
+  font-family: "Alata", sans-serif;
+  color: #247BA0;
 }
 
 .show {

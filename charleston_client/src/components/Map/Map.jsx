@@ -77,7 +77,7 @@ class Map extends Component {
           {...viewport}
           mapStyle="mapbox://styles/mapbox/streets-v9"
           width="100%"
-          height="90%"
+          height="100%"
           // when viewport changes, update viewport
           onViewportChange={this.handleViewportChange}
           mapboxApiAccessToken={token}
