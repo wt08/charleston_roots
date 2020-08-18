@@ -52,11 +52,13 @@ const IndividualRecipe = ({ user, selectedRecipe }) => {
         <Card>
           <Card.Title className="cardTitle">
             {selectedRecipe.label}{" "}
-            <FontAwesomeIcon
-              onClick={() => handleOnClickFav(selectedRecipe.uri)}
-              className="star"
-              icon={faStar}
-            />
+            {user ? (
+              <FontAwesomeIcon
+                onClick={() => handleOnClickFav(selectedRecipe.uri)}
+                className="star"
+                icon={faStar}
+              />
+            ) : null}
           </Card.Title>
           <Card.Img
             variant="top"

@@ -106,11 +106,11 @@ const ResultsRecipeGenerator = ({
                       >
                         Select
                       </Button>
-                      <FontAwesomeIcon
+                      {user ? <FontAwesomeIcon
                         onClick={() => handleOnClickFav(recipe.recipe.uri)}
                         className="star"
                         icon={faStar}
-                      />
+                      /> : null}
                     </Card.Body>
                   </Card>
                 );
