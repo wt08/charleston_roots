@@ -40,6 +40,8 @@ const RecipeGenerator = ({ selectedProduce, setSelectedProduce, setSelectedRecip
     <div className="recipeGenerator">
       <br />
       <br />
+      <br />
+      <br />
       <h1>Recipe Generator</h1>
       <br />
       <h4>

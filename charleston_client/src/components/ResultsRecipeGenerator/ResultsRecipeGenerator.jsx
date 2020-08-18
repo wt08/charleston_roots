@@ -71,6 +71,8 @@ const ResultsRecipeGenerator = ({
     <div className="resultsRecGen">
       <br />
       <br />
+      <br />
+      <br />
       <h1>Recipe Generator</h1>
       <br />
       <h4>Results:</h4>

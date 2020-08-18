@@ -60,6 +60,9 @@ const Login = ({ setUser }) => {
 
   return (
     <div className="loginComp">
+      <br/>
+      <br/>
+      <br/>
       <h3>Login</h3>
       <form onSubmit={handleSubmitExistingUser}>
         <input

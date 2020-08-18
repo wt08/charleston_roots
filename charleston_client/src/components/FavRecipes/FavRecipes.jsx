@@ -67,6 +67,7 @@ const FavRecipes = ({
       <br />
       <br />
       <br />
+      <br />
       <h1>Favorite Recipes</h1>
       {user ? (
         <div className="favList">
