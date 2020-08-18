@@ -72,7 +72,7 @@ const ResultsRecipeGenerator = ({
           {recipes[0]
             ? recipes.map((recipe) => {
                 return (
-                  <Card>
+                  <Card key={recipe.recipe.uri}>
                     {/* API data has nested recipe object  */}
                     <Card.Img
                       variant="top"

@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const RecipeGenerator = ({ selectedProduce, setSelectedProduce }) => {
   const [produce, setProduce] = useState(null);
-  console.log(selectedProduce);
 
   useEffect(() => {
     const makeAPICall = () => {
@@ -24,12 +23,10 @@ const RecipeGenerator = ({ selectedProduce, setSelectedProduce }) => {
   }, []);
 
   const handleOnClickSelect = (produceClicked) => {
-    console.log("handleSelect started");
     setSelectedProduce([...selectedProduce, produceClicked]);
   };
 
   const handleOnClickUnselect = (produceClicked) => {
-    console.log("handleUnselect started");
     const index = selectedProduce.indexOf(produceClicked);
     // copy of selectedProduce to be mutated. Couldn't splice useState selectedProduce and return mutated array.
     let selectedCopy = selectedProduce;
@@ -63,7 +60,7 @@ const RecipeGenerator = ({ selectedProduce, setSelectedProduce }) => {
           {produce
             ? produce.map((produce) => {
                 return (
-                  <Card>
+                  <Card key={produce.id}>
                     <Card.Img
                       variant="top"
                       src={produce.img}

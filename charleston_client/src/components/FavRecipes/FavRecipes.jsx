@@ -59,7 +59,7 @@ const FavRecipes = ({ user }) => {
         {fullFavsData
           ? fullFavsData.map((fav) => {
               return (
-                <Card>
+                <Card key={fav.uri}>
                   <Card.Img variant="top" src={fav.image} alt={fav.label} />
                   <Card.Body>
                     <Card.Title className="cardTitleFav">{fav.label}</Card.Title>
