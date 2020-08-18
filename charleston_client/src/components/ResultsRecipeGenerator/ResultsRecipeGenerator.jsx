@@ -25,7 +25,7 @@ const ResultsRecipeGenerator = ({
     const makeAPICall = () => {
       axios
         .get(
-          `https://api.edamam.com/search?q=${selectedProduce}&app_id=${recipe_api_id}&app_key=${recipe_api_key}`
+          `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=${selectedProduce}&app_id=${recipe_api_id}&app_key=${recipe_api_key}`
         )
         .then((res) => {
           const data = res.data;
