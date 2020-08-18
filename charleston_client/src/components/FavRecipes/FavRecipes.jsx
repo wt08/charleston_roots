@@ -26,8 +26,7 @@ const FavRecipes = ({ user }) => {
     console.log("getFullRecipeData starting");
     axios
       .get(
-        //   cors-anywhere is proxy server to get around CORS error
-        `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?${reformatFavUris(
+        `https://api.edamam.com/search?${reformatFavUris(
           data.favorites
         )}app_id=ef0f5e53&app_key=7a7046aac89468a188ddfff0efbb3812`
       )
