@@ -48,9 +48,13 @@ const FavRecipes = ({
       .catch(console.error);
   };
 
+
   useEffect(() => {
-    getUserData();
+    if (user) {
+      getUserData()
+    };
   }, []);
+
 
   const handleOnClickSelect = async (recipe) => {
     //   API has nested recipe object
@@ -64,32 +68,36 @@ const FavRecipes = ({
       <br />
       <br />
       <h1>Favorite Recipes</h1>
-      <div className="favList">
-        <CardColumns>
-          {fullFavsData
-            ? fullFavsData.map((fav) => {
-                return (
-                  <Card key={fav.uri}>
-                    <Card.Img variant="top" src={fav.image} alt={fav.label} />
-                    <Card.Body>
-                      <Card.Title className="cardTitleFav">
-                        {fav.label}
-                      </Card.Title>
-                      <Button onClick={() => handleOnClickSelect(fav)}>
-                        Select
-                      </Button>
-                      {/* <FontAwesomeIcon
+      {user ? (
+        <div className="favList">
+          <CardColumns>
+            {fullFavsData
+              ? fullFavsData.map((fav) => {
+                  return (
+                    <Card key={fav.uri}>
+                      <Card.Img variant="top" src={fav.image} alt={fav.label} />
+                      <Card.Body>
+                        <Card.Title className="cardTitleFav">
+                          {fav.label}
+                        </Card.Title>
+                        <Button onClick={() => handleOnClickSelect(fav)}>
+                          Select
+                        </Button>
+                        {/* <FontAwesomeIcon
                 onClick={() => handleOnClickFav(recipe.recipe.uri)}
                 className="star"
                 icon={faStar}
               /> */}
-                    </Card.Body>
-                  </Card>
-                );
-              })
-            : null}
-        </CardColumns>
-      </div>
+                      </Card.Body>
+                    </Card>
+                  );
+                })
+              : null}
+          </CardColumns>
+        </div>
+      ) : (
+        <h3>You must be logged in to see Favorite Recipes</h3>
+      )}
     </div>
   );
 };
