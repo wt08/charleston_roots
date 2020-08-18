@@ -1,7 +1,36 @@
+.resultsRecGen h1 {
+  color: #e8f1f2;
+  font-family: "Alata", sans-serif;
+}
+
+.resultsRecGen h4 {
+  color: #e8f1f2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  text-align: left;
+  padding: 15px;
+}
+
 .resultsList {
-  padding: 100px;
+  padding: 30px;
+}
+
+.cardTitle {
+  font-family: "Montserrat", sans-serif;
 }
 
 .star {
   cursor: pointer;
+  margin-left: 20px;
+  
+}
+
+.resultsButton {
+  font-family: "Alata", sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+  .resultsRecGen h4 {
+    text-align: center;
+  }
 }

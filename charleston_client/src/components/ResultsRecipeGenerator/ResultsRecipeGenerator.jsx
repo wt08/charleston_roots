@@ -61,8 +61,11 @@ const ResultsRecipeGenerator = ({
   };
 
   return (
-    <div>
+    <div className="resultsRecGen">
+      <br/>
+      <br/>
       <h1>Recipe Generator</h1>
+      <br/>
       <h4>Results:</h4>
       <div className="resultsList">
         <CardColumns>
@@ -77,8 +80,8 @@ const ResultsRecipeGenerator = ({
                       alt={recipe.recipe.label}
                     />
                     <Card.Body>
-                      <Card.Title>{recipe.recipe.label}</Card.Title>
-                      <Button onClick={() => handleOnClickSelect(recipe)}>
+                      <Card.Title className="cardTitle">{recipe.recipe.label}</Card.Title>
+                      <Button className="resultsButton" onClick={() => handleOnClickSelect(recipe)}>
                         Select
                       </Button>
                       <FontAwesomeIcon
