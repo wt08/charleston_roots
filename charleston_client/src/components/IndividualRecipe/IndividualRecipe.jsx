@@ -7,10 +7,9 @@ const IndividualRecipe = ({ selectedRecipe }) => {
     <div>
       <br />
       <br />
-      <br />
       <div className="individualRecipe">
       <Card>
-        <Card.Title>{selectedRecipe.label}</Card.Title>
+        <Card.Title className="cardTitle">{selectedRecipe.label}</Card.Title>
         <Card.Img
           variant="top"
           src={selectedRecipe.image}
@@ -20,6 +19,7 @@ const IndividualRecipe = ({ selectedRecipe }) => {
           <h3>
             Full recipe found at <a href={selectedRecipe.url} target="_blank" rel="noopener noreferrer">{selectedRecipe.source}</a>
           </h3>
+          <br/>
           <h3>Ingredients:</h3>
           <ul>
             {selectedRecipe.label

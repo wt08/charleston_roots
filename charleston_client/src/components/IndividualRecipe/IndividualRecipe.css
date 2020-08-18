@@ -1,3 +1,32 @@
 .individualRecipe {
-    padding: 100px;
+  padding: 30px;
+}
+
+.cardTitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+}
+
+.individualRecipe h3 {
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+  color: #247ba0;
+}
+
+.individualRecipe ul {
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+  font-size: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+    .individualRecipe {
+        padding: 0 200px 50px 200px;
+      }
+}
+
+@media only screen and (min-width: 1024px) {
+    .individualRecipe {
+        padding: 0 300px 50px 300px;
+      }
 }
