@@ -6,7 +6,7 @@ import CardColumns from "react-bootstrap/CardColumns";
 import "./RecipeGenerator.css";
 import { Link } from "react-router-dom";
 
-const RecipeGenerator = ( {selectedProduce, setSelectedProduce} ) => {
+const RecipeGenerator = ({ selectedProduce, setSelectedProduce }) => {
   const [produce, setProduce] = useState(null);
   console.log(selectedProduce);
 
@@ -24,31 +24,40 @@ const RecipeGenerator = ( {selectedProduce, setSelectedProduce} ) => {
   }, []);
 
   const handleOnClickSelect = (produceClicked) => {
+    console.log("handleSelect started");
     setSelectedProduce([...selectedProduce, produceClicked]);
   };
 
   const handleOnClickUnselect = (produceClicked) => {
+    console.log("handleUnselect started");
     const index = selectedProduce.indexOf(produceClicked);
     // copy of selectedProduce to be mutated. Couldn't splice useState selectedProduce and return mutated array.
     let selectedCopy = selectedProduce;
     selectedCopy.splice(index, 1);
-    setSelectedProduce(selectedCopy);
+    console.log(selectedCopy);
+    // selctedCopy HAD to be passed as an array. State was not updating without array brackets.
+    setSelectedProduce([...selectedCopy]);
   };
 
   return (
     <div className="recipeGenerator">
-      <br/>
-      <br/>
+      <br />
+      <br />
       <h1>Recipe Generator</h1>
-      <br/>
-      <h4>Select produce from the list below, then click <span>Find Recipes.</span></h4>
-      <br/>
+      <br />
+      <h4>
+        Select produce from the list below, then click{" "}
+        <span>Find Recipes.</span>
+      </h4>
+      <br />
       <h5>Produce Chosen:</h5>
-  {selectedProduce[0] ? <p>{selectedProduce[0]}</p> : <p>None</p>}
-  {selectedProduce[1] ? <p>{selectedProduce[1]}</p> : null}
-  {selectedProduce[2] ? <p>{selectedProduce[2]}</p> : null}
-  {selectedProduce[3] ? <p>{selectedProduce[3]}</p> : null}
-   <Link to={"/resultsrecipegenerator"}><Button className="recipeGenButton">Find Recipes</Button></Link> 
+      {selectedProduce[0] ? <p>{selectedProduce[0]}</p> : <p>None</p>}
+      {selectedProduce[1] ? <p>{selectedProduce[1]}</p> : null}
+      {selectedProduce[2] ? <p>{selectedProduce[2]}</p> : null}
+      {selectedProduce[3] ? <p>{selectedProduce[3]}</p> : null}
+      <Link to={"/resultsrecipegenerator"}>
+        <Button className="recipeGenButton">Find Recipes</Button>
+      </Link>
       <div className="produceList">
         <CardColumns>
           {produce
@@ -61,10 +70,12 @@ const RecipeGenerator = ( {selectedProduce, setSelectedProduce} ) => {
                       alt={produce.name}
                     />
                     <Card.Body>
-                      <Card.Title className="cardTitle">{produce.name}</Card.Title>
+                      <Card.Title className="cardTitle">
+                        {produce.name}
+                      </Card.Title>
                       {selectedProduce.includes(produce.name) ? (
                         <Button
-                        className="recipeGenButton"
+                          className="recipeGenButton"
                           onClick={() => handleOnClickUnselect(produce.name)}
                           variant="primary"
                         >
@@ -72,7 +83,7 @@ const RecipeGenerator = ( {selectedProduce, setSelectedProduce} ) => {
                         </Button>
                       ) : (
                         <Button
-                        className="recipeGenButton"
+                          className="recipeGenButton"
                           onClick={() => handleOnClickSelect(produce.name)}
                           variant="primary"
                         >
