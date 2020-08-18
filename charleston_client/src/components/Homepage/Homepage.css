@@ -3,11 +3,12 @@
   font-family: "Alata", sans-serif;
 }
 
-.homepage h4 {
+.homepageInfo {
   color: #e8f1f2;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   text-align: left;
+  padding: 15px;
 }
 
 .homepage span {
@@ -16,10 +17,6 @@
 
 .recipeGenLink {
   color: #1b98e0;
-}
-
-.homepageInfo {
-  padding: 15px;
 }
 
 

@@ -202,7 +202,7 @@ MVP:
 | create favorite model | H | 1hrs | 3hrs | hrs |
 | add handeonlclick to star| H | 2hrs | 3hrs | hrs |
 | fav recipe comp | H | 3hrs | 3hrs | hrs |
-| styling | H | 3hrs | hrs 9:00 - | hrs |
+| styling | H | 3hrs | 1hrs 10:45 -  | hrs |
 | deploy front | H | 2hrs | hrs | hrs |
 | troubleshoot handleonclick star | H | 2hrs | hrs | hrs |
 | fix select/unselect produce buttons | H | 1hrs | hrs | hrs |

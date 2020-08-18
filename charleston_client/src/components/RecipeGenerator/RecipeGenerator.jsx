@@ -36,15 +36,19 @@ const RecipeGenerator = ( {selectedProduce, setSelectedProduce} ) => {
   };
 
   return (
-    <div>
+    <div className="recipeGenerator">
+      <br/>
+      <br/>
       <h1>Recipe Generator</h1>
-      <h4>Choose produce then click Find Recipes to see what you can make</h4>
+      <br/>
+      <h4>Select produce from the list below, then click <span>Find Recipes.</span></h4>
+      <br/>
       <h5>Produce Chosen:</h5>
-  {selectedProduce[0] ? <p>{selectedProduce[0]}</p> : null}
+  {selectedProduce[0] ? <p>{selectedProduce[0]}</p> : <p>None</p>}
   {selectedProduce[1] ? <p>{selectedProduce[1]}</p> : null}
   {selectedProduce[2] ? <p>{selectedProduce[2]}</p> : null}
   {selectedProduce[3] ? <p>{selectedProduce[3]}</p> : null}
-   <Link to={"/resultsrecipegenerator"}><Button>Find Recipes</Button></Link> 
+   <Link to={"/resultsrecipegenerator"}><Button className="recipeGenButton">Find Recipes</Button></Link> 
       <div className="produceList">
         <CardColumns>
           {produce
@@ -57,9 +61,10 @@ const RecipeGenerator = ( {selectedProduce, setSelectedProduce} ) => {
                       alt={produce.name}
                     />
                     <Card.Body>
-                      <Card.Title>{produce.name}</Card.Title>
+                      <Card.Title className="cardTitle">{produce.name}</Card.Title>
                       {selectedProduce.includes(produce.name) ? (
                         <Button
+                        className="recipeGenButton"
                           onClick={() => handleOnClickUnselect(produce.name)}
                           variant="primary"
                         >
@@ -67,6 +72,7 @@ const RecipeGenerator = ( {selectedProduce, setSelectedProduce} ) => {
                         </Button>
                       ) : (
                         <Button
+                        className="recipeGenButton"
                           onClick={() => handleOnClickSelect(produce.name)}
                           variant="primary"
                         >

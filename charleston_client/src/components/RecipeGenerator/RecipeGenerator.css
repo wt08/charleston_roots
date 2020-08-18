@@ -1,4 +1,58 @@
-.produceList {
-  padding: 100px;
+.recipeGenerator h1 {
+  color: #e8f1f2;
+  font-family: "Alata", sans-serif;
 }
 
+.recipeGenerator h4 {
+  color: #e8f1f2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  text-align: left;
+  padding: 15px;
+}
+
+.recipeGenerator h5 {
+  color: #1b98e0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  text-align: left;
+  padding: 15px 15px 5px 15px;
+}
+
+.recipeGenerator p {
+  color: #e8f1f2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.recipeGenerator span {
+  font-style: italic;
+}
+
+.produceList {
+  padding: 30px;
+}
+
+.cardTitle {
+  font-family: "Montserrat", sans-serif;
+}
+
+.recipeGenButton {
+  font-family: "Alata", sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+  .recipeGenerator h4 {
+    text-align: center;
+  }
+
+  .recipeGenerator h5 {
+    text-align: center;
+  }
+
+  .recipeGenerator p {
+    text-align: center;
+  }
+}
