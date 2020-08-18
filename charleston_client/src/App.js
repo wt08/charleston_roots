@@ -27,7 +27,7 @@ function App() {
           <Route
             path="/login"
             render={(routerProps) => (
-              <Login {...routerProps} setUser={setUser} />
+              <Login routerProps={routerProps} setUser={setUser} />
             )}
           />
           <Route
