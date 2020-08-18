@@ -1,0 +1,13 @@
+.favRecipes {
+    color: #e8f1f2;
+    font-family: "Alata", sans-serif;
+  }
+
+.favList {
+  padding: 30px;
+}
+
+.cardTitleFav {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}

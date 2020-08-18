@@ -3,6 +3,7 @@ import axios from "axios";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardColumns from "react-bootstrap/CardColumns";
+import './FavRecipes.css'
 
 const FavRecipes = ({ user }) => {
   // favs uri stored in custom backend
@@ -48,7 +49,12 @@ const FavRecipes = ({ user }) => {
   }, []);
 
   return (
-    <div>
+    <div className="favRecipes">
+      <br/>
+      <br/>
+      <br/>
+      <h1>Favorite Recipes</h1>
+      <div className="favList">
       <CardColumns>
         {fullFavsData
           ? fullFavsData.map((fav) => {
@@ -56,7 +62,7 @@ const FavRecipes = ({ user }) => {
                 <Card>
                   <Card.Img variant="top" src={fav.image} alt={fav.label} />
                   <Card.Body>
-                    <Card.Title>{fav.label}</Card.Title>
+                    <Card.Title className="cardTitleFav">{fav.label}</Card.Title>
                     {/* <Button onClick={() => handleOnClickSelect(recipe)}>
                 Select
               </Button>
@@ -71,6 +77,7 @@ const FavRecipes = ({ user }) => {
             })
           : null}
       </CardColumns>
+      </div>
     </div>
   );
 };
