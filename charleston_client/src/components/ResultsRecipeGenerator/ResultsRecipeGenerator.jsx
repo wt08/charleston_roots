@@ -7,6 +7,7 @@ import "./ResultsRecipeGenerator.css";
 import { Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
+import Modal from "react-bootstrap/Modal";
 
 const ResultsRecipeGenerator = ({
   user,
@@ -17,9 +18,12 @@ const ResultsRecipeGenerator = ({
   const recipe_api_id = process.env.REACT_APP_edamam_recipe_api_id;
   const recipe_api_key = process.env.REACT_APP_edamam_recipe_api_key;
   const [recipes, setRecipes] = useState([]);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
 
   useEffect(() => {
-    setSelectedRecipe({})
+    // reset selectedRecipe to avoid redirect
+    setSelectedRecipe({});
     const makeAPICall = () => {
       axios
         .get(
@@ -39,15 +43,14 @@ const ResultsRecipeGenerator = ({
     setSelectedRecipe(recipe.recipe);
   };
 
-  
   const handleOnClickFav = async (recipeUri) => {
     // reformat Uri using regex to make it edamam API searchable
-      let format1 = recipeUri.replace(/:/g, "%3A");
-      let format2 = format1.replace(/\//g, "%2F");
-      let format3 = format2.replace(/#/g, "%23");
+    let format1 = recipeUri.replace(/:/g, "%3A");
+    let format2 = format1.replace(/\//g, "%2F");
+    let format3 = format2.replace(/#/g, "%23");
 
     const makeAPICall = (favUri) => {
-      console.log("API call starting")
+      console.log("API call starting");
       axios({
         url: `http://srced-chs.herokuapp.com/users/${user.id}/favorites`,
         method: "POST",
@@ -57,10 +60,11 @@ const ResultsRecipeGenerator = ({
         },
       })
         .then(console.log("Success"))
+        .then(setShow(true))
         .catch(console.error);
     };
-    
-    makeAPICall(format3)
+
+    makeAPICall(format3);
   };
 
   return (
@@ -70,6 +74,16 @@ const ResultsRecipeGenerator = ({
       <h1>Recipe Generator</h1>
       <br />
       <h4>Results:</h4>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Added to Favorites!</Modal.Title>
+        </Modal.Header>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div className="resultsList">
         <CardColumns>
           {recipes[0]

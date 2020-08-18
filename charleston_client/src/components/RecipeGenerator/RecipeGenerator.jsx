@@ -6,10 +6,12 @@ import CardColumns from "react-bootstrap/CardColumns";
 import "./RecipeGenerator.css";
 import { Link } from "react-router-dom";
 
-const RecipeGenerator = ({ selectedProduce, setSelectedProduce }) => {
+const RecipeGenerator = ({ selectedProduce, setSelectedProduce, setSelectedRecipe }) => {
   const [produce, setProduce] = useState(null);
 
   useEffect(() => {
+    // reset selectedRecipe to avoid redirect on results page
+    setSelectedRecipe({})
     const makeAPICall = () => {
       axios
         .get(`https://srced-chs.herokuapp.com/produces`)

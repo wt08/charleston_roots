@@ -8,9 +8,8 @@ import AccountSettings from "./components/AccountSettings/AccountSettings";
 import RecipeGenerator from "./components/RecipeGenerator/RecipeGenerator";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ResultsRecipeGenerator from "./components/ResultsRecipeGenerator/ResultsRecipeGenerator";
-import IndividualRecipe from './components/IndividualRecipe/IndividualRecipe'
-import FavRecipes from './components/FavRecipes/FavRecipes'
-
+import IndividualRecipe from "./components/IndividualRecipe/IndividualRecipe";
+import FavRecipes from "./components/FavRecipes/FavRecipes";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -43,6 +42,7 @@ function App() {
                 {...routerProps}
                 selectedProduce={selectedProduce}
                 setSelectedProduce={setSelectedProduce}
+                setSelectedRecipe={setSelectedRecipe}
               />
             )}
           />
@@ -58,22 +58,20 @@ function App() {
               />
             )}
           />
-            <Route
+          <Route
             path="/individualrecipe"
             render={(routerProps) => (
               <IndividualRecipe
                 {...routerProps}
                 selectedRecipe={selectedRecipe}
+                user={user}
               />
             )}
           />
-           <Route
+          <Route
             path="/favrecipes"
             render={(routerProps) => (
-              <FavRecipes
-                {...routerProps}
-                user={user}
-              />
+              <FavRecipes {...routerProps} user={user} />
             )}
           />
         </Switch>
