@@ -48,13 +48,11 @@ const FavRecipes = ({
       .catch(console.error);
   };
 
-
   useEffect(() => {
     if (user) {
-      getUserData()
-    };
+      getUserData();
+    }
   }, []);
-
 
   const handleOnClickSelect = async (recipe) => {
     //   API has nested recipe object
@@ -71,30 +69,35 @@ const FavRecipes = ({
       <h1>Favorite Recipes</h1>
       {user ? (
         <div className="favList">
-          <CardColumns>
-            {fullFavsData
-              ? fullFavsData.map((fav) => {
-                  return (
-                    <Card key={fav.uri}>
-                      <Card.Img variant="top" src={fav.image} alt={fav.label} />
-                      <Card.Body>
-                        <Card.Title className="cardTitleFav">
-                          {fav.label}
-                        </Card.Title>
-                        <Button onClick={() => handleOnClickSelect(fav)}>
-                          Select
-                        </Button>
-                        {/* <FontAwesomeIcon
+          {fullFavsData ? (
+            <CardColumns>
+              {fullFavsData.map((fav) => {
+                return (
+                  <Card key={fav.uri}>
+                    <Card.Img variant="top" src={fav.image} alt={fav.label} />
+                    <Card.Body>
+                      <Card.Title className="cardTitleFav">
+                        {fav.label}
+                      </Card.Title>
+                      <Button onClick={() => handleOnClickSelect(fav)}>
+                        Select
+                      </Button>
+                      {/* <FontAwesomeIcon
                 onClick={() => handleOnClickFav(recipe.recipe.uri)}
                 className="star"
                 icon={faStar}
               /> */}
-                      </Card.Body>
-                    </Card>
-                  );
-                })
-              : null}
-          </CardColumns>
+                    </Card.Body>
+                  </Card>
+                );
+              })}
+            </CardColumns>
+          ) : (
+            <h3>
+              You haven't favorited anything! Click on the star icon of any
+              recipe to add it here.
+            </h3>
+          )}
         </div>
       ) : (
         <h3>You must be logged in to see Favorite Recipes</h3>
