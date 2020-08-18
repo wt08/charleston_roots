@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Card from "react-bootstrap/Card";
 import './IndividualRecipe.css'
 
 const IndividualRecipe = ({ selectedRecipe }) => {
+
   return (
     <div>
       <br />

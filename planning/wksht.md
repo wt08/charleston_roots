@@ -219,6 +219,7 @@ POSTMVP:
 
 ## Bugs/Improvements
 
+After selecting a recipe, recipe generator has to mount twice before clearing selected item
 Make produce routes Get only
 Fix select/unselect buttons and produce chosen list
 Fix that even when new user is unique, isTaken alert still pops up!  

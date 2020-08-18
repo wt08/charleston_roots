@@ -19,6 +19,7 @@ const ResultsRecipeGenerator = ({
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
+    setSelectedRecipe({})
     const makeAPICall = () => {
       axios
         .get(
