@@ -4,9 +4,13 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardColumns from "react-bootstrap/CardColumns";
 import "./FavRecipes.css";
-import { Redirect } from "react-router-dom";
 
-const FavRecipes = ({ user, selectedRecipe, setSelectedRecipe }) => {
+const FavRecipes = ({
+  user,
+  selectedRecipe,
+  setSelectedRecipe,
+  routerProps,
+}) => {
   // favs uri stored in custom backend
   const [userData, setUserData] = useState(null);
   console.log("userData -", userData);
@@ -45,13 +49,13 @@ const FavRecipes = ({ user, selectedRecipe, setSelectedRecipe }) => {
   };
 
   useEffect(() => {
-    setSelectedRecipe({});
     getUserData();
   }, []);
 
-  const handleOnClickSelect = (recipe) => {
+  const handleOnClickSelect = async (recipe) => {
     //   API has nested recipe object
-    setSelectedRecipe(recipe);
+    await setSelectedRecipe(recipe);
+    routerProps.history.push("/individualrecipe");
   };
 
   return (
@@ -86,7 +90,6 @@ const FavRecipes = ({ user, selectedRecipe, setSelectedRecipe }) => {
             : null}
         </CardColumns>
       </div>
-      {selectedRecipe.label ? <Redirect to="/individualRecipe" /> : null}
     </div>
   );
 };

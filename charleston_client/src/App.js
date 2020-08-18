@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 import "./App.css";
 import Layout from "./components/Layout/Layout";
 import Homepage from "./components/Homepage/Homepage";
@@ -50,7 +51,7 @@ function App() {
             path="/resultsrecipegenerator"
             render={(routerProps) => (
               <ResultsRecipeGenerator
-                {...routerProps}
+                routerProps={routerProps}
                 user={user}
                 selectedProduce={selectedProduce}
                 selectedRecipe={selectedRecipe}
@@ -72,7 +73,7 @@ function App() {
             path="/favrecipes"
             render={(routerProps) => (
               <FavRecipes
-                {...routerProps}
+                routerProps={routerProps}
                 user={user}
                 selectedRecipe={selectedRecipe}
                 setSelectedRecipe={setSelectedRecipe}

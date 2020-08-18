@@ -14,6 +14,7 @@ const ResultsRecipeGenerator = ({
   selectedProduce,
   selectedRecipe,
   setSelectedRecipe,
+  routerProps,
 }) => {
   const recipe_api_id = process.env.REACT_APP_edamam_recipe_api_id;
   const recipe_api_key = process.env.REACT_APP_edamam_recipe_api_key;
@@ -22,8 +23,6 @@ const ResultsRecipeGenerator = ({
   const handleClose = () => setShow(false);
 
   useEffect(() => {
-    // reset selectedRecipe to avoid redirect
-    setSelectedRecipe({});
     const makeAPICall = () => {
       axios
         .get(
@@ -38,9 +37,10 @@ const ResultsRecipeGenerator = ({
     makeAPICall();
   }, []);
 
-  const handleOnClickSelect = (recipe) => {
+  const handleOnClickSelect = async (recipe) => {
     //   API has nested recipe object
-    setSelectedRecipe(recipe);
+    await setSelectedRecipe(recipe);
+    routerProps.history.push("/individualrecipe");
   };
 
   const handleOnClickFav = async (recipeUri) => {
@@ -118,8 +118,6 @@ const ResultsRecipeGenerator = ({
             : null}
         </CardColumns>
       </div>
-      {/* if selectedRecipe has content, go to IndividualRecipe for that recipe */}
-      {selectedRecipe.label ? <Redirect to="/individualRecipe" /> : null}
     </div>
   );
 };
