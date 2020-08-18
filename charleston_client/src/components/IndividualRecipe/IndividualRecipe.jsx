@@ -19,7 +19,7 @@ const IndividualRecipe = ({ user, selectedRecipe }) => {
 
     const makeAPICall = (favUri) => {
       axios({
-        url: `http://srced-chs.herokuapp.com/users/${user.id}/favorites`,
+        url: `https://srced-chs.herokuapp.com/users/${user.id}/favorites`,
         method: "POST",
         data: {
           uri: favUri,
