@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import './AccountSettings.css'
+import Button from "react-bootstrap/Button";
 
 const AccountSettings = ({ user, setUser }) => {
   // variable to reflect status of need to redirect
@@ -23,12 +25,17 @@ const AccountSettings = ({ user, setUser }) => {
   };
 
   return (
-    <div>
+    <div className="accountSettings">
+      <br />
+      <br />
+      <br />
       {/* conditionals make sure this doesn't error out when no user logged in */}
       {user ? <h3>Username: {user.username}</h3> : null}
       {user ? <h3>Email: {user.email}</h3> : null}
-      <button onClick={handleClickLogout}>Logout</button>
-      <button onClick={handleClickDeleteUser}>Delete</button>
+      <Button onClick={handleClickLogout}>Logout</Button>
+      <br />
+      <br />
+      <Button onClick={handleClickDeleteUser}>Delete</Button>
       {isRedirect ? <Redirect to="/" /> : null}
     </div>
   );
