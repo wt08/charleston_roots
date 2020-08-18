@@ -1,5 +1,8 @@
-.accountSettings h3 {
-    color: #e8f1f2;
-    font-family: "Montserrat", sans-serif;
+.accountSettings {
+  height: 100vh;
 }
 
+.accountSettings h3 {
+  color: #e8f1f2;
+  font-family: "Montserrat", sans-serif;
+}
