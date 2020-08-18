@@ -3,9 +3,10 @@ import axios from "axios";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardColumns from "react-bootstrap/CardColumns";
-import './FavRecipes.css'
+import "./FavRecipes.css";
+import { Redirect } from "react-router-dom";
 
-const FavRecipes = ({ user }) => {
+const FavRecipes = ({ user, selectedRecipe, setSelectedRecipe }) => {
   // favs uri stored in custom backend
   const [userData, setUserData] = useState(null);
   console.log("userData -", userData);
@@ -44,39 +45,48 @@ const FavRecipes = ({ user }) => {
   };
 
   useEffect(() => {
+    setSelectedRecipe({});
     getUserData();
   }, []);
 
+  const handleOnClickSelect = (recipe) => {
+    //   API has nested recipe object
+    setSelectedRecipe(recipe);
+  };
+
   return (
     <div className="favRecipes">
-      <br/>
-      <br/>
-      <br/>
+      <br />
+      <br />
+      <br />
       <h1>Favorite Recipes</h1>
       <div className="favList">
-      <CardColumns>
-        {fullFavsData
-          ? fullFavsData.map((fav) => {
-              return (
-                <Card key={fav.uri}>
-                  <Card.Img variant="top" src={fav.image} alt={fav.label} />
-                  <Card.Body>
-                    <Card.Title className="cardTitleFav">{fav.label}</Card.Title>
-                    {/* <Button onClick={() => handleOnClickSelect(recipe)}>
-                Select
-              </Button>
-              <FontAwesomeIcon
+        <CardColumns>
+          {fullFavsData
+            ? fullFavsData.map((fav) => {
+                return (
+                  <Card key={fav.uri}>
+                    <Card.Img variant="top" src={fav.image} alt={fav.label} />
+                    <Card.Body>
+                      <Card.Title className="cardTitleFav">
+                        {fav.label}
+                      </Card.Title>
+                      <Button onClick={() => handleOnClickSelect(fav)}>
+                        Select
+                      </Button>
+                      {/* <FontAwesomeIcon
                 onClick={() => handleOnClickFav(recipe.recipe.uri)}
                 className="star"
                 icon={faStar}
               /> */}
-                  </Card.Body>
-                </Card>
-              );
-            })
-          : null}
-      </CardColumns>
+                    </Card.Body>
+                  </Card>
+                );
+              })
+            : null}
+        </CardColumns>
       </div>
+      {selectedRecipe.label ? <Redirect to="/individualRecipe" /> : null}
     </div>
   );
 };

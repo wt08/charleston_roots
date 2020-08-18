@@ -40,7 +40,7 @@ const ResultsRecipeGenerator = ({
 
   const handleOnClickSelect = (recipe) => {
     //   API has nested recipe object
-    setSelectedRecipe(recipe.recipe);
+    setSelectedRecipe(recipe);
   };
 
   const handleOnClickFav = async (recipeUri) => {
@@ -102,7 +102,7 @@ const ResultsRecipeGenerator = ({
                       </Card.Title>
                       <Button
                         className="resultsButton"
-                        onClick={() => handleOnClickSelect(recipe)}
+                        onClick={() => handleOnClickSelect(recipe.recipe)}
                       >
                         Select
                       </Button>

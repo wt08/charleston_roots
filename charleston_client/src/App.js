@@ -71,7 +71,12 @@ function App() {
           <Route
             path="/favrecipes"
             render={(routerProps) => (
-              <FavRecipes {...routerProps} user={user} />
+              <FavRecipes
+                {...routerProps}
+                user={user}
+                selectedRecipe={selectedRecipe}
+                setSelectedRecipe={setSelectedRecipe}
+              />
             )}
           />
         </Switch>
