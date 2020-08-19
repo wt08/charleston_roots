@@ -6,16 +6,6 @@ As a user, I should be able to create an account.
 As a user, I should be able to delete an account.
 As a user, I should be able to save my favorite recipes.
 
-## Ideas
-
-Map with farm locations/times.  
-Opt in alerts about farmers markets.  
-Recipe ingredient scanner for local produce.  
-Enter zipcode upon entry, gives next/closest farmers market.  
-Input produce that you bought/plan to buy, outputs possible recipes.
-Calendar w/ all farmers markets on there
-Sign in to save your fav recipes
-
 ## Models
 
 User  
@@ -43,6 +33,9 @@ img: string
 
 ## Project Links
 
+[Live Site Link](https://sourced-charleston.netlify.app/#/)
+[Backend Repo](https://github.com/wt08/sourced_charleston_backend)
+
 ## API
 
 - [Edamam](https://developer.edamam.com/)
@@ -69,7 +62,7 @@ DESKTOP/TABLET:
 
 ## React Architecture
 
-- [Architecture](https://res.cloudinary.com/dgbf3yxnd/image/upload/v1597158719/capstone/IMG_0420_qte7ug.jpg)
+- [Architecture](https://res.cloudinary.com/dgbf3yxnd/image/upload/v1597158719/capstone/IMG_0420_qte7ug.jpg)  
   COMPONENTS:  
   Layout  
   Nav  
@@ -79,11 +72,11 @@ DESKTOP/TABLET:
   HomePage
   Map  
   Login  
-  Recipe_gen  
-  Recipe_gen_results  
-  Indiv_recipe  
-  Faves  
-  Account_settings
+  RecipeGenerator
+  ResultsRecipeGenerator
+  IndividualRecipe
+  FavRecipes
+  AccountSettings
 
 ## MVP/Post MVP
 
