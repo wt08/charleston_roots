@@ -1,10 +1,10 @@
 ## User Stories
 
 As a user, I should be able to locate farmer's markets near me.  
-As a user, I should be able to find recipes for the produce I bought/plan to buy.
-As a user, I should be able to create an account.
-As a user, I should be able to delete an account.
-As a user, I should be able to save my favorite recipes.
+As a user, I should be able to find recipes for the produce I bought/plan to buy.  
+As a user, I should be able to create an account.  
+As a user, I should be able to delete an account.  
+As a user, I should be able to save my favorite recipes.  
 
 ## Models
 
@@ -33,7 +33,7 @@ img: string
 
 ## Project Links
 
-[Live Site Link](https://sourced-charleston.netlify.app/#/)
+[Live Site Link](https://sourced-charleston.netlify.app/#/)  
 [Backend Repo](https://github.com/wt08/sourced_charleston_backend)
 
 ## API
@@ -62,7 +62,8 @@ DESKTOP/TABLET:
 
 ## React Architecture
 
-- [Architecture](https://res.cloudinary.com/dgbf3yxnd/image/upload/v1597158719/capstone/IMG_0420_qte7ug.jpg)  
+- [Architecture](https://res.cloudinary.com/dgbf3yxnd/image/upload/v1597158719/capstone/IMG_0420_qte7ug.jpg)
+
   COMPONENTS:  
   Layout  
   Nav  
@@ -82,7 +83,7 @@ DESKTOP/TABLET:
 
 MVP:
 
-HOMEPAGE
+HOMEPAGE  
 add Layout component  
 add Nav component  
 add Footer comp  
@@ -119,7 +120,7 @@ add handleonclick to produce div that stores name in useState
 add get recipe button that links to results page  
 style
 
-RECIPE GENERATOR RESULTS
+RECIPE GENERATOR RESULTS  
 use produce stored in usestate to call Edamam recipe API using produce as queries  
 display recipe API results on page  
 create favorite model  
@@ -141,7 +142,7 @@ create routes on frontend in App.js
 link nav elements to components
 on backend, restrict routes to only what's needed
 
-POST MVP:
+POST MVP:  
 Calendar  
 Extra styling/effects
 
