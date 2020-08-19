@@ -1,7 +1,3 @@
-## Project Description
-
-App that helps users find/eat local produce. Simple to use, no overload of information. Want to make daily procurement/cooking easier.
-
 ## User Stories
 
 As a user, I should be able to locate farmer's markets near me.  
@@ -94,64 +90,63 @@ DESKTOP/TABLET:
 MVP:
 
 HOMEPAGE
-add Layout component x  
-add Nav component x  
-add Footer comp x  
-add login button x  
-generate Map x  
-create markets/times model with seeded data x  
-restrict to only GET routes x  
-have markets locations display on map thru API call x  
-allow user to find closest by entering zipcode x  
-when market location on map clicked, display info from market/time/address models x  
+add Layout component  
+add Nav component  
+add Footer comp  
+add login button  
+generate Map  
+create markets/times model with seeded data  
+restrict to only GET routes  
+have markets locations display on map thru API call  
+allow user to find closest by entering zipcode  
+when market location on map clicked, display info from market/time/address models  
 style
 
 DEPLOY  
-backend X
+backend  
 frontend
 
 NAV  
-create hamburger menu x  
+create hamburger menu  
 style
 
 USER ACCOUNT  
-create user model x  
-create get(pluse custom get by username), post, and delete routes x
-create Login page w/ API call x  
-link Login page to homepage x
-create account_settings page that displays username, email, and ability to delete x  
+create user model  
+create get(pluse custom get by username), post, and delete routes  
+create Login page w/ API call  
+link Login page to homepage  
+create account_settings page that displays username, email, and ability to delete  
 style
 
 RECIPE GENERATOR  
-Create produce model and seed data x  
+Create produce model and seed data  
 Make get route only  
-display all produce on page x
-add filters and serch by name  
-add handleonclick to produce div that stores name in useState x
-add get recipe button that links to results page x  
+display all produce on page  
+add handleonclick to produce div that stores name in useState  
+add get recipe button that links to results page  
 style
 
 RECIPE GENERATOR RESULTS
-use produce stored in usestate to call Edamam recipe API using produce as queries x  
-display recipe API results on page x  
-create favorite model x  
-add favorite star to recipe div x  
-add handeonlclick to star so that recipe is added to faves model x  
-add back button that takes you back to recipe generator w/ previously selected items  
+use produce stored in usestate to call Edamam recipe API using produce as queries  
+display recipe API results on page  
+create favorite model  
+add favorite star to recipe div  
+add handeonlclick to star so that recipe is added to faves model  
 style
 
 INDIVIDUAL RECIPE  
-display recipe name, image, ingredients, and linke to recipe based on variable passed to it x  
+display recipe name, image, ingredients, and linke to recipe based on variable passed to it  
 style
 
 FAVE RECIPES  
-display all recipes based on user who is logged in x  
-use edamam_uri in fav model top make edama API to get recipe data x  
+display all recipes based on user who is logged in  
+use edamam_uri in fav model top make edamam API to get recipe data  
 style
 
 LINKING/ROUTING  
-create routes in App.js x  
-link nav elements to components x
+create routes on frontend in App.js  
+link nav elements to components
+on backend, restrict routes to only what's needed
 
 POST MVP:
 Calendar  
@@ -159,56 +154,51 @@ Extra styling/effects
 
 ## Schedule
 
-| Day           | Deliverable                                                 | Status     |
-| ------------- | ----------------------------------------------------------- | ---------- |
-| Day 1 (Tues)  | Finish planning & Layout, Nav, Footer from Homepage section | Complete   |
-| Day 2 (Wed)   | Homepage partial                                            | Complete   |
-| Day 3 (Thurs) | Rest of homepage                                            | Complete   |
-| Day 4 (Fri)   | Partial user account                                        | Complete   |
-| Day 5 (Sat)   | Rest of user account, backend deploy                        | Complete   |
-| Day 5 (Sun)   | Recipe Generator/Recipe Generator Results/Individual        | Complete   |
-| Day 5 (Mon)   | Fave Recipe                                                 | Complete   |
-| Day 5 (Tues)  | Deploy frontend, Style, Final Touches                       | Incomplete |
+| Day           | Deliverable                                                 | Status   |
+| ------------- | ----------------------------------------------------------- | -------- |
+| Day 1 (Tues)  | Finish planning & Layout, Nav, Footer from Homepage section | Complete |
+| Day 2 (Wed)   | Homepage partial                                            | Complete |
+| Day 3 (Thurs) | Rest of homepage                                            | Complete |
+| Day 4 (Fri)   | Partial user account                                        | Complete |
+| Day 5 (Sat)   | Rest of user account, backend deploy                        | Complete |
+| Day 5 (Sun)   | Recipe Generator/Recipe Generator Results/Individual        | Complete |
+| Day 5 (Mon)   | Fave Recipe                                                 | Complete |
+| Day 5 (Tues)  | Deploy frontend, Style, Final Touches                       | Complete |
 
 ## Time Frames
 
 MVP:  
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | ------------- | :------: | :------------: | :------------: | :---------: |
-| add Layout | H | .5hrs | .5hrs | hrs |
-| add Nav | H | .5hrs | .5hrs | hrs |
-| add Footer | H | .5hrs | .5hrs | hrs |
-| add login button | H | .5rs | -hrs | hrs |
-| generate map | H | 4rs | 4hrs | hrs |
-| create markets/times/address scaffold with seeded data | H | .5rs | .5hrs | hrs |
-| restrict to only GET route | H | .5rs | -hrs | hrs |
-| have markets locations display on map thru API call | H | .5rs | 3hrs | hrs |
-| allow user to find closest by entering zipcode | H | 3rs | 3hrs | hrs |
-| when market location on map clicked, display info from market/time/address models | H | 3rs | 0hrs | hrs |
-| style homepage | H | 2hrs | hrs | hrs |
-| create user model | H | 1hrs | .5hrs | hrs |
-| create get, post, and delete routes | H | 1hrs | .5hrs | hrs |
-| create Login page w/ API call | H | 3hrs | 2.5hrs | hrs |
-| manipulate loginbutton upon login | H | 1hrs | 2.5hrs | hrs |
-| create account settings page | H | 2hrs | 1hrs | hrs |
-| deploy backend | H | 1hrs | 1hrs | hrs |
-| create produce model/seed data | H | 1hrs | 1hrs | hrs |
-| display all produce on Recipe Generator comp | H | 1hrs | .5hrs | hrs |
-| recipe generator handleonclick | H | 1hrs | 1.5hrs | hrs |
-| link get recipe button | H | 1hrs | .5hrs | hrs |
-| call Edama food API on results recipe generator comp | H | 1hrs | .5hrs | hrs |
-| call Edama food API on results recipe generator comp | H | 1hrs | 1hrs | hrs |
-| individual recipe comp | H | 1hrs | .5hrs | hrs |
-| create favorite model | H | 1hrs | 3hrs | hrs |
-| add handeonlclick to star| H | 2hrs | 3hrs | hrs |
-| fav recipe comp | H | 3hrs | 3hrs | hrs |
-| styling | H | 3hrs | 2.5hrs | hrs |
-| deploy front | H | 2hrs | hrs | hrs |
-| troubleshoot handleonclick star | H | 2hrs | hrs | hrs |
-| fix select/unselect produce buttons | H | 1hrs | hrs 12:30 | hrs |
-| restrict routes | H | .5hrs | hrs | hrs |
-| add filters to recipe gen | H | 1.5hrs | hrs | hrs |
-| Total | H | hrs | -hrs | hrs |
+| add Layout | H | .5hrs | .5hrs | .5hrs |
+| add Nav | H | .5hrs | .5hrs | .5hrs |
+| add Footer | H | .5hrs | .5hrs | .5hrs |
+| generate map | H | 4rs | 4hrs | 4hrs |
+| create markets/times/address scaffold with seeded data | H | .5rs | .5hrs | .5hrs |
+| have markets locations display on map thru API call | H | .5rs | 3hrs | 3hrs |
+| allow user to find closest by entering zipcode | H | 3rs | 3hrs | 3hrs |
+| create user model | H | 1hrs | .5hrs | .5hrs |
+| create get, post, and delete routes | H | 1hrs | .5hrs | .5hrs |
+| create Login page w/ API call | H | 3hrs | 2.5hrs | 2.5hrs |
+| manipulate loginbutton upon login | H | 1hrs | 2.5hrs | 2.5hrs |
+| create account settings page | H | 2hrs | 1hrs | 1hrs |
+| deploy backend | H | 1hrs | 1hrs | 1hrs |
+| create produce model/seed data | H | 1hrs | 1hrs | 1hrs |
+| display all produce on Recipe Generator comp | H | 1hrs | .5hrs | .5hrs |
+| recipe generator handleonclick | H | 1hrs | 1.5hrs | 1.5hrs |
+| link get recipe button | H | 1hrs | .5hrs | .5hrs |
+| call Edama food API on results recipe generator comp | H | 1hrs | .5hrs | .5hrs |
+| call Edama food API on results recipe generator comp | H | 1hrs | 1hrs | 1hrs |
+| individual recipe comp | H | 1hrs | .5hrs | .5hrs |
+| create favorite model | H | 1hrs | 3hrs | 3hrs |
+| add handeonlclick to star| H | 2hrs | 3hrs | 3hrs |
+| fav recipe comp | H | 3hrs | 3hrs | 3hrs |
+| styling | H | 3hrs | 2.5hrs | 2.5hrs |
+| deploy front | H | 2hrs | .5hrs | .5hrs |
+| troubleshoot handleonclick star | H | 2hrs | 1hrs | 1hrs |
+| fix select/unselect produce buttons | H | 1hrs | 1.5hrs | 1.5hrs |
+| final touches | H | 1hrs | 1.5hrs | 1.5hrs |
+| Total | H | hrs | hrs | 41.5hrs |
 
 POSTMVP:  
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
@@ -217,19 +207,13 @@ POSTMVP:
 | Styling/effcts| L | 10hrs | -hrs | hrs |
 | Total | L | 18hrs | -hrs | hrs |
 
-## Bugs/Improvements
-
-Figure out better way to redirect. Causing bug.
-Make produce routes Get only
-Fix select/unselect buttons and produce chosen list
-Fix that even when new user is unique, isTaken alert still pops up!  
-keep user logged in, even during page refresh
-
 ## Additional Libraries
 
 React-Map-GL
 Mapbox GL JS
 Deck GL
+Bootstrap
+Fontawesome
 
 ## Hurdles
 
@@ -247,4 +231,18 @@ markets.map((market) => {
 
 ```
 
-Redirect: had issues with getting redirect to work. Initially had it in onSubmit function, ended up putting it in body and making it conditional on a state boolean.
+Redirect: originally used react's Redirect component based on a manipulatd state. It was causing issues when going back to that page, so switched redirect method to history.push.
+
+Edamam API needed special characters replaced when searching by recipe URI. Wrote a function usign regex to accomplish this:
+
+```
+  const reformatFavUris = (uris) => {
+    let holder = [];
+    for (let i = 0; i < uris.length; i++) {
+      holder.push(`r=${uris[i].uri}&`);
+    }
+    return holder.join("");
+  };
+```
+
+Learned a lot about the time it takes state to update when you're using it in a conditional or in the resolve of a promise. Made some functions more streamlined so as to not rely on state so much.

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
 import "./App.css";
 import Layout from "./components/Layout/Layout";
 import Homepage from "./components/Homepage/Homepage";

@@ -11,13 +11,10 @@ const FavRecipes = ({
   setSelectedRecipe,
   routerProps,
 }) => {
-  // favs uri stored in custom backend
-  const [userData, setUserData] = useState(null);
-  console.log("userData -", userData);
 
   //   favs data from edamam API
   const [fullFavsData, setFullFavsData] = useState(null);
-  console.log("fullFavsData-", fullFavsData);
+  
 
   const reformatFavUris = (uris) => {
     let holder = [];
@@ -28,7 +25,6 @@ const FavRecipes = ({
   };
 
   const getFullRecipeData = (data) => {
-    console.log("getFullRecipeData starting");
     axios
       .get(
         `https://api.edamam.com/search?${reformatFavUris(
@@ -82,11 +78,6 @@ const FavRecipes = ({
                       <Button onClick={() => handleOnClickSelect(fav)}>
                         Select
                       </Button>
-                      {/* <FontAwesomeIcon
-                onClick={() => handleOnClickFav(recipe.recipe.uri)}
-                className="star"
-                icon={faStar}
-              /> */}
                     </Card.Body>
                   </Card>
                 );

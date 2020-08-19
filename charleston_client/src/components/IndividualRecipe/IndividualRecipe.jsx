@@ -49,7 +49,7 @@ const IndividualRecipe = ({ user, selectedRecipe }) => {
         </Modal.Footer>
       </Modal>
       <div className="individualRecipe">
-        <Card>
+        <Card key={selectedRecipe.uri}>
           <Card.Title className="cardTitle">
             {selectedRecipe.label}{" "}
             {user ? (
