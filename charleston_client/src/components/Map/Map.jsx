@@ -55,6 +55,7 @@ class Map extends Component {
     const layer = new IconLayer({
       id: "icon-layer",
       data: this.props.marketData,
+      autoHighlight: true,
       pickable: true,
       // iconAtlas and iconMapping are required
       // getIcon: return a string
