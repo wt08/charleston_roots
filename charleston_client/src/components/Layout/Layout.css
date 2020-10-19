@@ -3,6 +3,10 @@
   right: 15px;
   font-family: "Alata", sans-serif;
   margin-top: 10px;
+  background-color: #84BE1F!important;
+  border: 0px!important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  color: white!important;
 }
 
 .account {

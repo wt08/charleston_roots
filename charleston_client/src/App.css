@@ -2,7 +2,9 @@
 
 .App {
   text-align: center;
-  background-color: #13293D;
+  background: url("https://res.cloudinary.com/dgbf3yxnd/image/upload/v1603142395/bernard-hermant-X-Bu9X6gok0-unsplash_xd6vnn.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 

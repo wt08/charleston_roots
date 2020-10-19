@@ -26,7 +26,7 @@ const Homepage = () => {
       <br />
       <br />
       <br />
-      <h1>Sourced: Charleston</h1>
+      <h1 className="homepageHeader">Sourced: Charleston</h1>
       <br />
       <br />
       <div className="homepageInfo">
@@ -38,6 +38,7 @@ const Homepage = () => {
         Then, find out what to make with all that produce using our <Link className="recipeGenLink" to={"/recipegenerator"}>Recipe Generator.</Link>
       </h4>
       </div>
+      
       {/* if markets variable has content, map over each element and create new object. Pass down this object */}
       <Map
         marketData={

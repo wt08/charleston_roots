@@ -1,14 +1,31 @@
-.homepage h1 {
-  color: #e8f1f2;
+.homepageHeader {
   font-family: "Alata", sans-serif;
+  color: white;
+  background-color: #84be1f;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  font-style: italic;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 3px;
 }
 
 .homepageInfo {
-  color: #e8f1f2;
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
   text-align: left;
   padding: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+}
+
+.homepage .homepageInfo h4 {
+  font-size: 15px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
 }
 
 .homepage span {
@@ -16,12 +33,20 @@
 }
 
 .recipeGenLink {
-  color: #1b98e0;
+  color: #84be1f;
 }
 
-
 @media only screen and (min-width: 768px) {
-    .homepage h4 {
-        text-align: center;
-    }
+  .homepageHeader {
+    padding: 5px;
+  }
+
+  .homepageInfo {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .homepage .homepageInfo h4 {
+    text-align: center;
+  }
 }

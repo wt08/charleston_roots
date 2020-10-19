@@ -3,16 +3,21 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 35px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   cursor: pointer;
   margin: 10px;
+  background-color: #84BE1F;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
 }
 
 .burger_line {
   width: 100%;
   height: 15%;
-  background-color: #E8F1F2;
+  background-color: white;
+  border-radius: 3px;
 }
 
 .hide {
