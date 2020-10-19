@@ -59,11 +59,11 @@ class Map extends Component {
       // iconAtlas and iconMapping are required
       // getIcon: return a string
       iconAtlas:
-        "https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/icon-atlas.png",
+        "https://res.cloudinary.com/dgbf3yxnd/image/upload/v1603138773/location-icon-atlas_w0dvmz.png",
       iconMapping: iconMapping,
       getIcon: (d) => "marker",
 
-      sizeScale: 15,
+      sizeScale: 12,
       getPosition: (d) => d.coordinates,
       getSize: (d) => 3,
       getColor: (d) => [Math.sqrt(d.exits), 140, 0],
